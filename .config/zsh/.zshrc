@@ -73,41 +73,5 @@ bindkey '^[[P' delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Load zsh-syntax-highlighting; should be last.
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-# set config for antigen
-export ADOTDIR="$HOME/.config/shell/.antigen"
-
-# antigen plugin manager
-source ~/.local/bin/antigen.zsh
-
-# load oh-my-zsh library
-antigen use oh-my-zsh
-
-# Bundles from default repo (robbyrussell's oh-my-zsh)
-#antigen bundle git
-#antigen bundle common-aliases
-#antigen bundle archlinux
-antigen bundle extract
-antigen bundle colored-man-pages
-
-# other bundles
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-
-# zsh theme
-#antigen theme gnzh
-#antigen theme theunraveler
-antigen theme ys
-
-# done
-antigen apply
-
-
-# Load aliases and shortcuts if existent.
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
+# Load syntax highlighting; should be last.
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
