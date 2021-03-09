@@ -91,12 +91,12 @@ myTerminal :: String
 myTerminal = "alacritty"   -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "qutebrowser "               -- Sets qutebrowser as browser for tree select
+myBrowser = "firefox "               -- Sets qutebrowser as browser for tree select
 -- myBrowser = myTerminal ++ " -e lynx " -- Sets lynx as browser for tree select
 
 myEditor :: String
-myEditor = "emacsclient -c -a emacs "  -- Sets emacs as editor for tree select
--- myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor for tree select
+-- myEditor = "emacsclient -c -a emacs "  -- Sets emacs as editor for tree select
+myEditor = myTerminal ++ " -e nvim "    -- Sets vim as editor for tree select
 
 myBorderWidth :: Dimension
 myBorderWidth = 2          -- Sets border width for windows
@@ -758,12 +758,12 @@ myKeys =
         , ("M-p x", xmonadPrompt dtXPConfig)       -- xmonadPrompt
 
     -- Useful programs to have a keybinding for launch
-        , ("M-<Return>", spawn (myTerminal ++ " -e fish"))
-        , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
+        , ("M-<Return>", spawn (myTerminal))
+        , ("M-b", spawn (myBrowser))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
     -- Kill windows
-        , ("M-S-c", kill1)     -- Kill the currently focused client
+        , ("M-q", kill1)     -- Kill the currently focused client
         , ("M-S-a", killAll)   -- Kill all windows on current workspace
 
     -- Workspaces
