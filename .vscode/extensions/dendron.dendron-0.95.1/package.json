@@ -1,0 +1,1235 @@
+{
+	"name": "dendron",
+	"private": true,
+	"displayName": "dendron",
+	"description": "Dendron is a hierarchal note taking tool that grows as you do. ",
+	"publisher": "dendron",
+	"version": "0.95.1",
+	"engines": {
+		"vscode": "^1.58.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"installConfig": {
+		"hoistingLimits": "none"
+	},
+	"keywords": [
+		"second brain",
+		"markdown",
+		"roam",
+		"notes",
+		"schema"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "dist/extension.js",
+	"extensionPack": [
+		"dendron.dendron-paste-image"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "markdown",
+				"extensions": [
+					".md"
+				],
+				"aliases": [
+					"markdown"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"viewsWelcome": [
+			{
+				"view": "dendron.backlinks",
+				"contents": "There are no backlinks to this note."
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "dendron-view",
+					"title": "Dendron",
+					"icon": "media/icons/dendron-activity-bar-icon.svg"
+				}
+			]
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "dendron.sample",
+					"name": "Sample View",
+					"contextualTitle": "Sample View",
+					"type": "webview",
+					"when": "dendron:devMode"
+				}
+			],
+			"dendron-view": [
+				{
+					"id": "dendron.tip-of-the-day",
+					"name": "Tip of the Day",
+					"when": "dendron:pluginActive",
+					"type": "webview"
+				},
+				{
+					"id": "dendron.backlinks",
+					"name": "Backlinks",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"id": "dendron.treeView",
+					"name": "Tree View",
+					"contextualTitle": "Tree View",
+					"when": "dendron:pluginActive",
+					"icon": "media/icons/dendron-vscode.svg"
+				},
+				{
+					"id": "dendron.lookup-view",
+					"name": "Lookup View",
+					"contextualTitle": "Lookup View",
+					"type": "webview",
+					"when": "dendron:pluginActive && dendron:noteLookupActive && dendron:shouldShowLookupView"
+				},
+				{
+					"id": "dendron.calendar-view",
+					"name": "Calendar View",
+					"contextualTitle": "Calendar View",
+					"type": "webview",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"id": "dendron.help-and-feedback",
+					"name": "Help and Feedback"
+				}
+			]
+		},
+		"categories": [
+			"Other"
+		],
+		"commands": [
+			{
+				"command": "dendron.backlinks.sortByLastUpdated",
+				"title": "Sort by last updated (currently sorted by path names)",
+				"icon": "$(list-ordered)"
+			},
+			{
+				"command": "dendron.backlinks.sortByPathNames",
+				"title": "Sort by path names (currently sorted by last updated)",
+				"icon": "$(list-ordered)"
+			},
+			{
+				"command": "dendron.backlinks.expandAll",
+				"title": "Expand All",
+				"icon": "$(expand-all)"
+			},
+			{
+				"command": "dendron.treeView.labelByTitle",
+				"title": "Label and sort notes by title",
+				"icon": "$(list-ordered)"
+			},
+			{
+				"command": "dendron.treeView.labelByFilename",
+				"title": "Label and sort notes by filename",
+				"icon": "$(list-ordered)"
+			},
+			{
+				"command": "dendron.treeView.expandAll",
+				"title": "Expand All",
+				"icon": "$(expand-all)"
+			},
+			{
+				"command": "dendron.browseNote",
+				"title": "Dendron: Browse Note"
+			},
+			{
+				"command": "dendron.contributeToCause",
+				"title": "Dendron: Contribute"
+			},
+			{
+				"command": "dendron.goto",
+				"title": "Dendron: Go to"
+			},
+			{
+				"command": "dendron.gotoNote",
+				"title": "Dendron: Go to Note"
+			},
+			{
+				"command": "dendron.createSchemaFromHierarchy",
+				"title": "Dendron: Create Schema From Note Hierarchy"
+			},
+			{
+				"command": "dendron.createDailyJournalNote",
+				"title": "Dendron: Create Daily Journal Note"
+			},
+			{
+				"command": "dendron.copyNoteLink",
+				"title": "Dendron: Copy Note Link"
+			},
+			{
+				"command": "dendron.copyNoteRef",
+				"title": "Dendron: Copy Note Ref"
+			},
+			{
+				"command": "dendron.copyToClipboard",
+				"title": "Dendron: Copy To Clipboard"
+			},
+			{
+				"command": "dendron.deleteNode",
+				"title": "Dendron: Delete Node"
+			},
+			{
+				"command": "dendron.insertNote",
+				"title": "Dendron: Insert Note"
+			},
+			{
+				"command": "dendron.insertNoteLink",
+				"title": "Dendron: Insert Note Link"
+			},
+			{
+				"command": "dendron.insertNoteIndex",
+				"title": "Dendron: Insert Note Index"
+			},
+			{
+				"command": "dendron.moveNote",
+				"title": "Dendron: Move Note"
+			},
+			{
+				"command": "dendron.randomNote",
+				"title": "Dendron: Random Note"
+			},
+			{
+				"command": "dendron.renameNote",
+				"title": "Dendron: Rename Note"
+			},
+			{
+				"command": "dendron.renameHeader",
+				"title": "Dendron: Rename Header"
+			},
+			{
+				"command": "dendron.moveHeader",
+				"title": "Dendron: Move Header"
+			},
+			{
+				"command": "dendron.convertCandidateLink",
+				"title": "Dendron: Convert Candidate Link"
+			},
+			{
+				"command": "dendron.convertLink",
+				"title": "Dendron: Convert Link"
+			},
+			{
+				"command": "dendron.lookupNote",
+				"title": "Dendron: Lookup Note"
+			},
+			{
+				"command": "dendron.lookupNoteAutoComplete",
+				"title": "Dendron: hidden"
+			},
+			{
+				"command": "dendron.createJournalNote",
+				"title": "Dendron: Create Journal Note"
+			},
+			{
+				"command": "dendron.createScratchNote",
+				"title": "Dendron: Create Scratch Note"
+			},
+			{
+				"command": "dendron.createMeetingNote",
+				"title": "Dendron: Create Meeting Note"
+			},
+			{
+				"command": "dendron.lookupSchema",
+				"title": "Dendron: Lookup Schema"
+			},
+			{
+				"command": "dendron.reloadIndex",
+				"title": "Dendron: Reload Index"
+			},
+			{
+				"command": "dendron.createTask",
+				"title": "Dendron: Create Task Note"
+			},
+			{
+				"command": "dendron.archiveHierarchy",
+				"title": "Dendron: Archive Hierarchy"
+			},
+			{
+				"command": "dendron.refactorHierarchy",
+				"title": "Dendron: Refactor Hierarchy"
+			},
+			{
+				"command": "dendron.goUpHierarchy",
+				"title": "Dendron: Go Up"
+			},
+			{
+				"command": "dendron.goNextHierarchy",
+				"title": "Dendron: Go Next Sibling"
+			},
+			{
+				"command": "dendron.goPrevHierarchy",
+				"title": "Dendron: Go Previous Sibling"
+			},
+			{
+				"command": "dendron.goDownHierarchy",
+				"title": "Dendron: Go Down"
+			},
+			{
+				"command": "dendron.gotoBacklink",
+				"title": "Dendron: Go To Backlink"
+			},
+			{
+				"command": "dendron.addAndCommit",
+				"title": "Dendron: Workspace: Add and Commit"
+			},
+			{
+				"command": "dendron.sync",
+				"title": "Dendron: Workspace: Sync"
+			},
+			{
+				"command": "dendron.vaultAdd",
+				"title": "Dendron: Vault Add"
+			},
+			{
+				"command": "dendron.vaultRemove",
+				"title": "Dendron: Vault Remove"
+			},
+			{
+				"command": "dendron.vaultConvert",
+				"title": "Dendron: Vault Convert"
+			},
+			{
+				"command": "dendron.initWS",
+				"title": "Dendron: Initialize Workspace"
+			},
+			{
+				"command": "dendron.changeWS",
+				"title": "Dendron: Change Workspace"
+			},
+			{
+				"command": "dendron.upgradeSettings",
+				"title": "Dendron: Upgrade Settings"
+			},
+			{
+				"command": "dendron.configurePod",
+				"title": "Dendron: Configure Pod"
+			},
+			{
+				"command": "dendron.configureServiceConnection",
+				"title": "Dendron: Configure Service Connection",
+				"enablement": "dendron:pluginActive && dendron:enableExportPodV2"
+			},
+			{
+				"command": "dendron.configureExportPodV2",
+				"title": "Dendron: Configure Export Pod V2",
+				"enablement": "dendron:pluginActive && dendron:enableExportPodV2"
+			},
+			{
+				"command": "dendron.importPod",
+				"title": "Dendron: Import Pod"
+			},
+			{
+				"command": "dendron.exportPod",
+				"title": "Dendron: Export Pod"
+			},
+			{
+				"command": "dendron.exportPodv2",
+				"title": "Dendron: Export Pod V2",
+				"enablement": "dendron:pluginActive && dendron:enableExportPodV2"
+			},
+			{
+				"command": "dendron.publishPod",
+				"title": "Dendron: Publish Pod"
+			},
+			{
+				"command": "dendron.snapshotVault",
+				"title": "Dendron: Snapshot Vault"
+			},
+			{
+				"command": "dendron.restoreVault",
+				"title": "Dendron: Restore Vault"
+			},
+			{
+				"command": "dendron.copyNoteURL",
+				"title": "Dendron: Copy Note URL"
+			},
+			{
+				"command": "dendron.createHook",
+				"title": "Dendron: Hook Create"
+			},
+			{
+				"command": "dendron.deleteHook",
+				"title": "Dendron: Hook Delete"
+			},
+			{
+				"command": "dendron.registerNoteTrait",
+				"title": "Dendron: Register Note Trait"
+			},
+			{
+				"command": "dendron.createNoteWithTraits",
+				"title": "Dendron: Create Note with Custom Traits"
+			},
+			{
+				"command": "dendron.publishExport",
+				"title": "Dendron: Publish Export"
+			},
+			{
+				"command": "dendron.publishDev",
+				"title": "Dendron: Publish Dev"
+			},
+			{
+				"command": "dendron.signUp",
+				"title": "Dendron: Sign Up"
+			},
+			{
+				"command": "dendron.signIn",
+				"title": "Dendron: Sign In"
+			},
+			{
+				"command": "dendron.enableTelemetry",
+				"title": "Dendron: Enable Telemetry"
+			},
+			{
+				"command": "dendron.disableTelemetry",
+				"title": "Dendron: Disable Telemetry"
+			},
+			{
+				"command": "dendron.openLink",
+				"title": "Dendron: Open Link"
+			},
+			{
+				"command": "dendron.pasteLink",
+				"title": "Dendron: Paste Link"
+			},
+			{
+				"command": "dendron.showHelp",
+				"title": "Dendron: Show Help"
+			},
+			{
+				"command": "dendron.showNoteGraph",
+				"title": "Dendron: Show Note Graph"
+			},
+			{
+				"command": "dendron.showSchemaGraph",
+				"title": "Dendron: Show Schema Graph"
+			},
+			{
+				"command": "dendron.showLegacyPreview",
+				"title": "Dendron: Show Preview (legacy)"
+			},
+			{
+				"command": "dendron.showPreview",
+				"title": "Dendron: Show Preview",
+				"icon": "$(open-preview)"
+			},
+			{
+				"command": "dendron.pasteFile",
+				"title": "Dendron: Paste File"
+			},
+			{
+				"command": "dendron.configureRaw",
+				"title": "Dendron: Configure (yaml)"
+			},
+			{
+				"command": "dendron.configureUI",
+				"title": "Dendron: Configure"
+			},
+			{
+				"command": "dendron.configureGraphStyle",
+				"title": "Dendron: Configure Graph Style (css)"
+			},
+			{
+				"command": "dendron.seedAdd",
+				"title": "Dendron: Add Seed to Workspace"
+			},
+			{
+				"command": "dendron.seedRemove",
+				"title": "Dendron: Remove Seed from Workspace"
+			},
+			{
+				"command": "dendron.seedBrowse",
+				"title": "Dendron: Browse the Seed Registry"
+			},
+			{
+				"command": "dendron.dev.doctor",
+				"title": "Dendron: Doctor"
+			},
+			{
+				"command": "dendron.dev.dumpState",
+				"title": "Dendron: Dump State"
+			},
+			{
+				"command": "dendron.dev.devTrigger",
+				"title": "Dendron:Dev: Dev Trigger"
+			},
+			{
+				"command": "dendron.dev.resetConfig",
+				"title": "Dendron:Dev: Reset Config"
+			},
+			{
+				"command": "dendron.dev.runMigration",
+				"title": "Dendron:Dev: Run Migration"
+			},
+			{
+				"command": "dendron.dev.openLogs",
+				"title": "Dendron:Dev: Open Logs"
+			},
+			{
+				"command": "dendron.diagnosticsReport",
+				"title": "Dendron:Dev: Diagnostics Report"
+			},
+			{
+				"command": "dendron.launchTutorial",
+				"title": "Dendron: Launch Tutorial"
+			},
+			{
+				"command": "dendron.openBackup",
+				"title": "Dendron: Open Backup"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "dendron.treeView.expandAll",
+					"when": "dendron:devMode"
+				},
+				{
+					"command": "dendron.browseNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.goto",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.gotoNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createSchemaFromHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createDailyJournalNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.copyNoteLink",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.copyNoteRef",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.copyToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "dendron.deleteNode",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.insertNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.insertNoteLink",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.insertNoteIndex",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.moveNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.randomNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.renameNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.renameHeader",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.moveHeader",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.convertCandidateLink",
+					"when": "false"
+				},
+				{
+					"command": "dendron.convertLink",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.lookupNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.lookupNoteAutoComplete",
+					"when": "dendron:pluginActive && dendron:noteLookupActive && !editorFocus && !view"
+				},
+				{
+					"command": "dendron.createJournalNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createScratchNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createMeetingNote",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.lookupSchema",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.reloadIndex",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createTask",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.archiveHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.refactorHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.goUpHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.goNextHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.goPrevHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.goDownHierarchy",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.gotoBacklink",
+					"when": "false"
+				},
+				{
+					"command": "dendron.addAndCommit",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.sync",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.vaultAdd",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.vaultRemove",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.vaultConvert",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.upgradeSettings",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.configurePod",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.importPod",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.exportPod",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.publishPod",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.snapshotVault",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.restoreVault",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.copyNoteURL",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createHook",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.deleteHook",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.registerNoteTrait",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.createNoteWithTraits",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.publishExport",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.publishDev",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.openLink",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.pasteLink",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.showNoteGraph",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.showSchemaGraph",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.showLegacyPreview",
+					"when": "dendron:pluginActive && dendron:hasLegacyPreview"
+				},
+				{
+					"command": "dendron.showPreview",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.pasteFile",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.configureRaw",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.configureUI",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.configureGraphStyle",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.seedAdd",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.seedRemove",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.seedBrowse",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.dev.doctor",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.dev.dumpState",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.dev.devTrigger",
+					"when": "dendron:devMode"
+				},
+				{
+					"command": "dendron.dev.resetConfig",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.dev.runMigration",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.diagnosticsReport",
+					"when": "dendron:pluginActive"
+				},
+				{
+					"command": "dendron.openBackup",
+					"when": "dendron:pluginActive"
+				}
+			],
+			"view/title": [
+				{
+					"command": "dendron.backlinks.sortByLastUpdated",
+					"when": "view == dendron.backlinks && dendron:backlinksSortOrder == PathNames",
+					"group": "navigation@1"
+				},
+				{
+					"command": "dendron.backlinks.sortByPathNames",
+					"when": "view == dendron.backlinks && dendron:backlinksSortOrder == LastUpdated",
+					"group": "navigation@1"
+				},
+				{
+					"command": "dendron.backlinks.expandAll",
+					"when": "view == dendron.backlinks",
+					"group": "navigation@2"
+				},
+				{
+					"command": "dendron.treeView.labelByTitle",
+					"when": "view == dendron.treeView && dendron:treeviewItemLabelType == filename"
+				},
+				{
+					"command": "dendron.treeView.labelByFilename",
+					"when": "view == dendron.treeView && dendron:treeviewItemLabelType == title"
+				},
+				{
+					"command": "dendron.treeView.expandAll",
+					"when": "view == dendron.treeView && dendron:devMode",
+					"group": "navigation@2"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder && dendron:pluginActive && workspaceFolderCount > 1",
+					"command": "dendron.vaultAdd",
+					"group": "2_workspace"
+				},
+				{
+					"when": "explorerResourceIsFolder && dendron:pluginActive",
+					"command": "dendron.vaultRemove",
+					"group": "2_workspace"
+				},
+				{
+					"when": "resourceExtname == .md && dendron:pluginActive || resourceExtname == .yml && dendron:pluginActive",
+					"command": "dendron.deleteNode",
+					"group": "2_workspace"
+				},
+				{
+					"when": "resourceExtname == .md && dendron:pluginActive",
+					"command": "dendron.moveNote",
+					"group": "2_workspace"
+				},
+				{
+					"command": "dendron.showPreview",
+					"when": "resourceLangId == markdown && dendron:pluginActive",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "resourceExtname == .md && dendron:pluginActive",
+					"command": "dendron.copyNoteLink",
+					"group": "2_workspace"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "dendron.showPreview",
+					"when": "editorLangId == markdown && !notebookEditorFocused && dendron:pluginActive",
+					"group": "navigation"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "dendron.showPreview",
+					"when": "resourceLangId == markdown && dendron:pluginActive",
+					"group": "1_open"
+				}
+			]
+		},
+		"configuration": {
+			"title": "dendron",
+			"properties": {
+				"dendron.dailyJournalDomain": {
+					"type": "string",
+					"default": "daily",
+					"description": "DEPRECATED. Use journal settings in dendron.yml"
+				},
+				"dendron.defaultJournalName": {
+					"type": "string",
+					"default": "journal",
+					"description": "DEPRECATED. Use journal settings in dendron.yml"
+				},
+				"dendron.defaultJournalDateFormat": {
+					"type": "string",
+					"default": "y.MM.dd",
+					"description": "DEPRECATED. Use journal settings in dendron.yml"
+				},
+				"dendron.defaultJournalAddBehavior": {
+					"default": "childOfDomain",
+					"type": "string",
+					"description": "DEPRECATED. Use journal settings in dendron.yml",
+					"enum": [
+						"childOfDomain",
+						"childOfDomainNamespace",
+						"childOfCurrent",
+						"asOwnDomain"
+					]
+				},
+				"dendron.defaultScratchName": {
+					"type": "string",
+					"default": "scratch",
+					"description": "DEPRECATED. Use scratch settings in dendron.yml"
+				},
+				"dendron.defaultScratchDateFormat": {
+					"type": "string",
+					"default": "y.MM.dd.HHmmss",
+					"description": "DEPRECATED. Use scratch settings in dendron.yml"
+				},
+				"dendron.defaultScratchAddBehavior": {
+					"default": "asOwnDomain",
+					"type": "string",
+					"description": "DEPRECATED. Use scratch settings in dendron.yml",
+					"enum": [
+						"childOfDomain",
+						"childOfDomainNamespace",
+						"childOfCurrent",
+						"asOwnDomain"
+					]
+				},
+				"dendron.copyNoteUrlRoot": {
+					"type": "string",
+					"description": "override root url when getting note url"
+				},
+				"dendron.linkSelectAutoTitleBehavior": {
+					"type": "string",
+					"description": "Control title behavior when using selection2link with lookup",
+					"enum": [
+						"none",
+						"slug"
+					],
+					"default": "slug"
+				},
+				"dendron.defaultLookupCreateBehavior": {
+					"default": "selectionExtract",
+					"type": "string",
+					"description": "when creating a new note with selected text, define behavior for selected text",
+					"enum": [
+						"selection2link",
+						"selectionExtract"
+					]
+				},
+				"dendron.defaultTimestampDecorationFormat": {
+					"default": "DATETIME_MED",
+					"type": "string",
+					"description": "Decide how human readable timestamp decoration is displayed",
+					"enum": [
+						"DATETIME_FULL",
+						"DATETIME_FULL_WITH_SECONDS",
+						"DATETIME_HUGE",
+						"DATETIME_HUGE_WITH_SECONDS",
+						"DATETIME_MED",
+						"DATETIME_MED_WITH_SECONDS",
+						"DATETIME_SHORT",
+						"DATETIME_SHORT_WITH_SECONDS",
+						"DATE_FULL",
+						"DATE_HUGE",
+						"DATE_MED",
+						"DATE_MED_WITH_WEEKDAY",
+						"DATE_SHORT",
+						"TIME_24_SIMPLE",
+						"TIME_24_WITH_LONG_OFFSET",
+						"TIME_24_WITH_SECONDS",
+						"TIME_24_WITH_SHORT_OFFSET",
+						"TIME_SIMPLE",
+						"TIME_WITH_LONG_OFFSET",
+						"TIME_WITH_SECONDS",
+						"TIME_WITH_SHORT_OFFSET"
+					]
+				},
+				"dendron.rootDir": {
+					"type": "string",
+					"default": "",
+					"description": "location of dendron workspace"
+				},
+				"dendron.dendronDir": {
+					"type": "string",
+					"default": "",
+					"description": "DEPRECATED. Use journal settings in dendron.yml"
+				},
+				"dendron.logLevel": {
+					"type": "string",
+					"default": "info",
+					"description": "control verbosity of dendron logs",
+					"enum": [
+						"debug",
+						"info",
+						"error"
+					]
+				},
+				"dendron.trace.server": {
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"type": "string",
+					"default": "messages",
+					"description": "LSP log level"
+				},
+				"dendron.serverPort": {
+					"type": "number",
+					"description": "port for server. If not set, will be randomly generated at startup."
+				},
+				"dendron.enableSelfContainedVaultWorkspace": {
+					"type": "boolean",
+					"default": false,
+					"description": "When enabled, newly created workspaces will be created as self contained vaults. This is an experimental feature."
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "dendron.goto",
+				"when": "editorFocus"
+			},
+			{
+				"command": "dendron.gotoNote",
+				"key": "ctrl+enter",
+				"when": "editorFocus"
+			},
+			{
+				"command": "dendron.createSchemaFromHierarchy",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.createDailyJournalNote",
+				"key": "ctrl+shift+i",
+				"mac": "cmd+shift+i",
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.copyNoteLink",
+				"key": "ctrl+shift+c",
+				"mac": "cmd+shift+c",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.copyNoteRef",
+				"key": "ctrl+shift+r",
+				"mac": "cmd+shift+r",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.deleteNode",
+				"key": "ctrl+shift+d",
+				"mac": "cmd+shift+d",
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.lookupNote",
+				"mac": "cmd+L",
+				"key": "ctrl+l",
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.lookupNoteAutoComplete",
+				"key": "Tab",
+				"when": "dendron:pluginActive && dendron:noteLookupActive && !editorFocus && !view"
+			},
+			{
+				"command": "dendron.createJournalNote",
+				"key": "ctrl+shift+j",
+				"mac": "cmd+shift+j",
+				"args": {
+					"noteType": "journal"
+				},
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.createScratchNote",
+				"key": "ctrl+shift+s",
+				"mac": "cmd+shift+s",
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.lookupSchema",
+				"mac": "cmd+shift+L",
+				"key": "ctrl+shift+l",
+				"when": "dendron:pluginActive"
+			},
+			{
+				"command": "dendron.goUpHierarchy",
+				"mac": "cmd+shift+up",
+				"key": "ctrl+shift+up",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.goNextHierarchy",
+				"key": "ctrl+shift+]",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.goPrevHierarchy",
+				"key": "ctrl+shift+[",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.goDownHierarchy",
+				"mac": "cmd+shift+down",
+				"key": "ctrl+shift+down",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.copyNoteURL",
+				"mac": "cmd+shift+u",
+				"windows": "ctrl+shift+u",
+				"when": "editorFocus && dendron:pluginActive"
+			},
+			{
+				"command": "dendron.showLegacyPreview",
+				"windows": "windows+ctrl+p",
+				"mac": "cmd+ctrl+p",
+				"when": "dendron:pluginActive && dendron:hasLegacyPreview"
+			},
+			{
+				"command": "dendron.showPreview",
+				"windows": "windows+ctrl+p",
+				"mac": "cmd+ctrl+p",
+				"when": "dendron:pluginActive"
+			}
+		],
+		"markdown.previewStyles": [
+			"./media/fontello/css/fontello.css",
+			"./media/markdown.css"
+		],
+		"yamlValidation": [
+			{
+				"fileMatch": "dendron.yml",
+				"url": "./dist/dendron-yml.validator.json"
+			}
+		]
+	},
+	"icon": "media/logo.png",
+	"scripts": {
+		"webpack": "cross-env SKIP_SENTRY=1 DETECT_CIRCULAR_DEPS=1 webpack --config webpack.dev.js",
+		"webpack:dev:watch": "yarn webpack --watch",
+		"webpack:prod": "webpack --config webpack.prod.js",
+		"watch": "yarn compile --watch",
+		"buildCI": "yarn rimraf out && yarn compile",
+		"build": "yarn compile",
+		"build:dev": "yarn webpack",
+		"build:prod": "yarn webpack:prod && ./scripts/varSub.sh",
+		"compile": "tsc -p tsconfig.build.json ",
+		"test": "node ./out/src/test/runTestInteg.js",
+		"format": "echo nop",
+		"vscode:uninstall": "node ./out/src/scripts/uninstallHook.js",
+		"deploy:vscode": "vsce publish --yarn",
+		"deploy:vscode:vsix": "vsce publish --packagePath",
+		"deploy:ovsx": "ovsx publish --yarn",
+		"deploy:ovsx:vsix": "ovsx publish ",
+		"clean": "yarn rimraf out dist node_modules && yarn clean:assets",
+		"clean:assets": "yarn rimraf assets/{static}",
+		"rimraf": "npx rimraf"
+	},
+	"devDependencies": {
+		"@sentry/webpack-plugin": "^1.17.1",
+		"@types/execa": "^2.0.0",
+		"@types/fs-extra": "^9.0.1",
+		"@types/glob": "^7.1.1",
+		"@types/is-url": "^1.2.30",
+		"@types/lodash": "^4.14.155",
+		"@types/luxon": "^1.25.0",
+		"@types/markdown-it": "^10.0.2",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/open": "^6.2.1",
+		"@types/open-graph-scraper": "^4.7.0",
+		"@types/semver": "^7.3.1",
+		"@types/string-similarity": "^4.0.0",
+		"circular-dependency-plugin": "^5.2.2",
+		"copy-webpack-plugin": "^9.0.1",
+		"cross-env": "^7.0.3",
+		"glob": "^7.1.6",
+		"ignore-loader": "^0.1.2",
+		"mocha": "^7.1.2",
+		"node-loader": "^2.0.0",
+		"ovsx": "^0.2.1",
+		"rimraf": "^3.0.2",
+		"source-map-loader": "^3.0.0",
+		"terser-webpack-plugin": "^5.2.4",
+		"ts-loader": "^8.0.0",
+		"ts-node": "^8.10.2",
+		"vsce": "^1.100.0",
+		"vscode-test": "^1.3.0",
+		"webpack": "^5.56.0",
+		"webpack-bundle-analyzer": "^4.4.2",
+		"webpack-cli": "^4.8.0",
+		"webpack-merge": "^5.8.0"
+	},
+	"dependencies": {
+		"@dendronhq/api-server": "^0.95.1",
+		"@dendronhq/common-all": "^0.95.1",
+		"@dendronhq/common-server": "^0.95.1",
+		"@dendronhq/engine-server": "^0.95.1",
+		"@dendronhq/pods-core": "^0.95.1",
+		"@sentry/integrations": "^6.13.1",
+		"@sentry/node": "^6.13.1",
+		"@types/vscode": "1.58",
+		"cross-path-sort": "^1.0.0",
+		"execa": "^4.0.2",
+		"fs-extra": "^9.0.1",
+		"is-url": "^1.2.4",
+		"lodash": "^4.17.15",
+		"luxon": "^1.25.0",
+		"markdown-it": "^11.0.0",
+		"open": "^8.2.1",
+		"open-graph-scraper": "^4.7.1",
+		"query-string": "^7.0.1",
+		"semver": "^7.3.2",
+		"string-similarity": "^4.0.4",
+		"textextensions": "^5.15.0",
+		"unist-util-visit": "2.0.3",
+		"vscode-languageclient": "^6.1.3"
+	},
+	"repository": {
+		"url": "https://github.com/dendronhq/dendron.git",
+		"type": "git"
+	},
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": "limited",
+			"description": "All features are enabled except for hooks.",
+			"restrictedConfigurations": []
+		}
+	},
+	"__metadata": {
+		"id": "8e264a73-4cfc-4be1-8f4f-c6a4ede494a4",
+		"publisherId": "4971f2f4-fcab-46ba-89f7-d22d42312286",
+		"publisherDisplayName": "dendron",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1652972296433
+	}
+}

@@ -10,3 +10,6 @@
 [submodule "/home/doug/.config/clojure"]
 	path = /home/doug/.config/clojure
 	url = https://github.com/dougllcooper/clojure-deps-edn
+[submodule "mybrain"]
+	path = mybrain
+	url = https://github.com/dougllcooper/mybrain
