@@ -1,4 +1,4 @@
-# Luke's config for the Zoomer Shell
+
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
@@ -97,7 +97,12 @@ bindkey '^e' edit-command-line
 source "$HOME/.config/token"
 
 # alias for dofiles git backup
-alias config='$HOME/.nix-profile/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config='$HOME/.nix-profile/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' # use instead of git
+alias clist='config ls-tree -r main --name-only' # list tracked files
+alias clistd='config ls-tree -d main --name-only' # list tracked directories
+alias clistt='config ls-tree -r -d main --name-only' # list tracked tree directories
+alias csublist="config config --file .gitmodules --name-only --get-regexp path" # list submodules
+
 
 # aliases
 alias ls="ls -haN --color=always --group-directories-first"
