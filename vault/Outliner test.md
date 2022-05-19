@@ -1,0 +1,4 @@
+- #s/youtube https://www.youtube.com/watch?v=QgbLb6QCK88
+	- Linking Your Thinking Beginners Guide
+	- This is Lesson 1 of 6. 
+	- 

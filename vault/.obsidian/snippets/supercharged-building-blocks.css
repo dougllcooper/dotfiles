@@ -1,0 +1,6 @@
+a.internal-link[data-link-kind$="bb" i]{
+  color: white;
+  background-color: #3b4352;
+  border-radius: 5px;
+  padding: 1px 5px;
+}

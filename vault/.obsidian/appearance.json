@@ -1,0 +1,10 @@
+{
+  "cssTheme": "LYT Mode",
+  "translucency": false,
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "file-explorer-no-line-wrap"
+  ],
+  "textFontFamily": "",
+  "interfaceFontFamily": ""
+}

@@ -1,0 +1,34 @@
+{
+  "showGettingStartedBanner": false,
+  "hasMigratedDailyNoteSettings": true,
+  "hasMigratedWeeklyNoteSettings": true,
+  "daily": {
+    "folder": "Calendar",
+    "enabled": true,
+    "template": "Extras/Templates/Template, Daily Note (Kit).md"
+  },
+  "weekly": {
+    "format": "YYYY-MM-DD-[w]ww",
+    "folder": "Calendar",
+    "template": "",
+    "enabled": false
+  },
+  "monthly": {
+    "format": "",
+    "template": "",
+    "folder": "Calendar",
+    "enabled": false
+  },
+  "quarterly": {
+    "format": "",
+    "template": "",
+    "folder": "",
+    "enabled": false
+  },
+  "yearly": {
+    "format": "",
+    "template": "",
+    "folder": "",
+    "enabled": false
+  }
+}

@@ -1,0 +1,26 @@
+- Source Tags
+	- #s/books
+	- #s/papers - research papers
+	- #s/articles - articles, blogs, manuals
+	- #s/forums
+	- #s/onlinecourses
+	- #s/thoughts
+	- #s/podcasts
+	- #s/youtube
+	- #s/videos - videos from other sources
+	- #s/people
+
+- Workshops/stacks
+	- #w/inbox - process and delete or retag
+	- #w/hold - to be processed; low priority
+	- #w/normal - to be processed; normal priority
+	- #w/priority - to be processed; hi priority
+	- #w/fleeting - initial fleeting notes
+	- #w/literature - literature notes; summary of fleeting note points
+	- #w/reference - reference metadata
+	- #w/permanent - permanent zettel notes
+
+- Misc. Workshops
+	- #w/archive - stuff to hold on to
+	- #w/project - put projects under w/project/project-name
+	- #w/junk - not sure if this is needed or not

@@ -1,0 +1,12 @@
+[submodule ".spacemacs.d"]
+	path = .spacemacs.d
+	url = https://dougllcooper/spacemacs.d
+[submodule "/home/doug/clojure"]
+	path = /home/doug/clojure
+	url = https://github.com/dougllcooper/clojure-deps-edn
+[submodule "/home/doug/.config/clojure-lsp"]
+	path = /home/doug/.config/clojure-lsp
+	url = https://github.com/dougllcooper/clojure-lsp-config
+[submodule "/home/doug/.config/clojure"]
+	path = /home/doug/.config/clojure
+	url = https://github.com/dougllcooper/clojure-deps-edn

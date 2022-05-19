@@ -1,0 +1,11 @@
+{
+  "disabled": false,
+  "fullscreen": true,
+  "keyboard": "f f",
+  "init": true,
+  "hide_properties": true,
+  "line_highlight": true,
+  "hide_topbar": true,
+  "hide_sidebar": true,
+  "hide_right_sidebar": true
+}
