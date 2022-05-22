@@ -4,7 +4,7 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
-ExecStart=/home/cb/myemacs/28.1/bin/emacs -Q --daemon -l "/home/cb/.emacs.d/init.el" --eval "(progn (require 'server) (server-start))"
+ExecStart=/usr/bin/emacs -Q --daemon -l "/home/doug/.emacs.d/init.el" --eval "(progn (require 'server) (server-start))"
 ExecStop=emacsclient --eval "(kill-emacs)"
 Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 Restart=on-failure

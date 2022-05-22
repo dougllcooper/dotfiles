@@ -19,10 +19,16 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GNUPGHOME="$HOME/.config/gnupg"
 # export CABAL_DIR="$HOME/.config/cabal"
 
+$HOME/.local/bin/remaps
+
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add nix_path
 # export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
@@ -30,14 +36,17 @@ HISTFILE=~/.cache/zsh/history
 # add JAVA_PATH for nixos only
 # export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
 # export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
+#
+# JAVA_HOME
+export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 
 # add for direnv for nix-shell environments
 # eval "$(direnv hook zsh)"
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$HOME/software/VSCode-linux-x64/bin:$JAVA_HOME/bin:$PATH"
 
 # manual install of zsh-completions
-fpath=($HOME/code/zsh-completions/src $fpath)
+fpath=($HOME/software/zsh-completions/src $fpath)
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -121,12 +130,16 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias sbcl="rlwrap sbcl"
 
-# emacs & vim
-# alias emacs="devour emacsclient -c -a 'emacs'"
-# alias em="devour emacsclient -c -a 'emacs'"
+# emacs, vim and other editors
+# alias emacs="emacsclient -c -a 'emacs'"
+# alias em="emacsclient -c -a 'emacs'"
 # alias remacs="systemctl restart --user emacs.service"
+alias em="emacs"
 # alias vim="nvim"
-# alias vi="vim"
+alias vi="vim"
+alias logseq="flatpak run com.logseq.Logseq"
+alias obsidian="flatpak run md.obsidian.Obsidian"
+alias ob="obsidian"
 
 # applications
 # alias obsidian="devour obsidian"
@@ -137,9 +150,9 @@ alias -g G="| egrep --color=always"
 alias -g L="| less"
 
 # doom emacs aliases
-# alias doomdoc="~/.emacs.d/bin/doom doctor"
-# alias doomsync="~/.emacs.d/bin/doom sync"
-# alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+alias doomdoc="~/.emacs.d/bin/doom doctor"
+alias doomsync="~/.emacs.d/bin/doom sync"
+alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 
 # nix aliases
 # alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
@@ -151,3 +164,5 @@ alias -g L="| less"
 
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"
+
+

@@ -19,25 +19,3 @@ from #note/boat🚤
 sort file.name asc
 ```
 
-
-
-## Develop🍃
-Develop notes are in a development process.
-
-```dataview
-List
-from #note/develop🍃  
-sort file.name asc
-```
-
-
-## Question❓ 
-Questions that need to be answered.
-
-```dataview
-List
-from #note/question❓ 
-sort file.name asc
-```
-
-

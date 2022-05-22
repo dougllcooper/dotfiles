@@ -5,20 +5,28 @@
       "path": "LYT Kit.md"
     },
     {
-      "basename": "The forest entrance",
-      "path": "Cards/The forest entrance.md"
+      "basename": "Tag Taxonomy",
+      "path": "Tag Taxonomy.md"
     },
     {
-      "basename": "Guiding Values of PKM",
-      "path": "Cards/Guiding Values of PKM.md"
+      "basename": "Home",
+      "path": "Home.md"
     },
     {
       "basename": "+ Start Here",
       "path": "+ Start Here.md"
     },
     {
-      "basename": "Home",
-      "path": "Home.md"
+      "basename": "_Start Here",
+      "path": "_Start Here.md"
+    },
+    {
+      "basename": "The forest entrance",
+      "path": "Cards/The forest entrance.md"
+    },
+    {
+      "basename": "Guiding Values of PKM",
+      "path": "Cards/Guiding Values of PKM.md"
     },
     {
       "basename": "Cooling pad 🧊",
@@ -191,14 +199,6 @@
     {
       "basename": "Small Wins foster a Sense of Control",
       "path": "Cards/Small Wins foster a Sense of Control.md"
-    },
-    {
-      "basename": "Signal to Noise Ratio",
-      "path": "Cards/Signal to Noise Ratio.md"
-    },
-    {
-      "basename": "Shadow Clone",
-      "path": "Cards/Shadow Clone.md"
     }
   ],
   "omittedPaths": [],
