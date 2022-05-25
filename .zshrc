@@ -16,19 +16,19 @@ export PAGER="less"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # move stuff out of home directory into subdirectories
-export GNUPGHOME="$HOME/.config/gnupg"
+# export GNUPGHOME="$HOME/.config/gnupg"
 # export CABAL_DIR="$HOME/.config/cabal"
 
-$HOME/.local/bin/remaps
+# $HOME/.local/bin/remaps
 
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add nix_path
 # export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
@@ -38,12 +38,13 @@ export NVM_DIR="$HOME/.config/nvm"
 # export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
 #
 # JAVA_HOME
-export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
+# export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
 
 # add for direnv for nix-shell environments
 # eval "$(direnv hook zsh)"
 
-export PATH="$HOME/.local/bin:$HOME/software/VSCode-linux-x64/bin:$JAVA_HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # manual install of zsh-completions
 fpath=($HOME/software/zsh-completions/src $fpath)
@@ -165,4 +166,10 @@ alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"
 
+# fedora stuff
+alias d="sudo dnf"
+alias dse="dnf search"
+alias din="sudo dnf install"
+alias dup="sudo dnf update"
+alias dlist="dnf list --installed"
 
