@@ -1,0 +1,1 @@
+const webpackRequire=e=>require(e);module.exports=webpackRequire;

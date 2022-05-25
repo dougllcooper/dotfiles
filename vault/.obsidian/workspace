@@ -22,55 +22,7 @@
               "leaf": "cc83254e48567c61",
               "group": null,
               "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Tag Taxonomy.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
               "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.7145847871598046}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Home.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"+ Start Here.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"_Start Here.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"+ Start Here.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"_Start Here.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-            },
-            {
-              "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"empty\",\"state\":{}}",
-              "eState": "{}"
             }
           ]
         }

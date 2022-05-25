@@ -180,3 +180,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"
+" Setup for VSCode - Calva plugin
+"
+nmap cqp :call VSCodeNotify('calva.jackIn')<CR>
+nmap cqq :call VSCodeNotify('calva.disconnect')<CR>
+nmap cpr :call VSCodeNotify('calva.loadFile')<CR>
+nmap cpR :call VSCodeNotify('calva.loadNamespace')<CR>
+nmap cpp :call VSCodeNotify('calva.evaluateSelection')<CR>
+nmap cqc :call VSCodeNotify('calva.evalCurrentFormInREPLWindow')<CR>
