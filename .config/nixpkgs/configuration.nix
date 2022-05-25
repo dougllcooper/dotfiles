@@ -207,6 +207,7 @@
   # environment.etc = {
   #   "NetworkManager/system-connections".source =
   #     "/state/etc/NetworkManager/system-connections/";
+  #   "containers".source = "/state/etc/containers/";
   #   "ssh/ssh_host_ed25519_key".source = "/state/etc/ssh/ssh_host_ed25519_key";
   #   "ssh/ssh_host_ed25519_key.pub".source =
   #     "/state/etc/ssh/ssh_host_ed25519_key.pub";
@@ -218,12 +219,13 @@
   #   "shadow".source = "/state/etc/shadow";
   #   "subgid".source = "/state/etc/subgid";
   #   "subuid".source = "/state/etc/subuid";
-  #   # "sudoers".source = "/state/etc/sudoers";
   # };
 
   # # save config for flatpak
   # systemd.tmpfiles.rules = [
   #   "L /var/lib/flatpak - - - - /state/var/lib/flatpak"
+  #   "L /var/lib/containers - - - - /state/var/lib/containers"
+  # ];
 
   # # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
