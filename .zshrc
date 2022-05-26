@@ -31,23 +31,23 @@ HISTFILE=~/.cache/zsh/history
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add nix_path
-# export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
+export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
 
 # add JAVA_PATH for nixos only
-# export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
-# export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
+ export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
+ export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
 #
 # JAVA_HOME
 # export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
+# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
 
 # add for direnv for nix-shell environments
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
 # manual install of zsh-completions
-fpath=($HOME/software/zsh-completions/src $fpath)
+# fpath=($HOME/software/zsh-completions/src $fpath)
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -101,10 +101,10 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Load autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load syntax highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # source token
 source "$HOME/.config/token"
@@ -156,22 +156,19 @@ alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 
 # nix aliases
-# alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
-# alias nixReb="sudo nixos-rebuild switch"
-# alias nixse="nix-env -qasP --description"
-# alias nixUpdateD="sudo nix-channel --update --dry-run; nix-channel --update --dry-run; nix-env -u --always --dry-run"
-# alias nixUpdate="sudo nix-channel --update; nix-channel --update; nix-env -u --always; systemctl daemon-reload; systemctl restart nix-daemon"
-# alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
+alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
+alias nixReb="sudo nixos-rebuild switch"
+alias nixse="nix-env -qasP --description"
+alias nixUpdateD="sudo nix-channel --update --dry-run; nix-channel --update --dry-run; nix-env -u --always --dry-run"
+alias nixUpdate="sudo nix-channel --update; nix-channel --update; nix-env -u --always; systemctl daemon-reload; systemctl restart nix-daemon"
+alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
 
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"
 
 # fedora stuff
-alias d="sudo dnf"
-alias dse="dnf search"
-alias din="sudo dnf install"
-alias dup="sudo dnf update"
-alias dlist="dnf list --installed"
-
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# alias d="sudo dnf"
+# alias dse="dnf search"
+# alias din="sudo dnf install"
+# alias dup="sudo dnf update"
+# alias dlist="dnf list --installed"
