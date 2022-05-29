@@ -265,11 +265,10 @@
 	"__metadata": {
 		"id": "2061917f-f76a-458a-8da9-f162de22b97e",
 		"publisherId": "eed56242-9699-4317-8bc7-e9f4b9bdd3ff",
-		"publisherDisplayName": "Red Hat",
+		"publisherDisplayName": null,
 		"targetPlatform": "undefined",
 		"updated": false,
 		"isPreReleaseVersion": false,
-		"preRelease": false,
-		"installedTimestamp": 1653498681937
+		"installedTimestamp": 1653704432204
 	}
 }

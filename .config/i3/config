@@ -39,7 +39,7 @@ set $myTerm alacritty
 bindsym $mod+Return exec $myTerm
 
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
@@ -63,8 +63,10 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 
 # Start Applications
 bindsym $mod+w exec firefox
-bindysm $mod+Shift+Return thunar
+bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+c exec code
+bindsym $mod+t exec treesheets
 
 # focus_follows_mouse no
 
@@ -104,9 +106,9 @@ bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -192,7 +194,7 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+# for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable
@@ -217,9 +219,12 @@ bindsym $mod+Ctrl+r reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+0 exit
 
- Resize window (you can also use the mouse for that)
+# suspend
+bindsym $mod+Shift+0 exec systemctl suspend
+
+# Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
         # Originally set to jkl;.
@@ -258,18 +263,25 @@ mode "resize" {
 }
 
 # Lock screen
-# bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec i3lock --image=/home/doug/.wallpapers/0040.png
 
 # Autostart applications
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; picom --config /home/dt/.config/picom/picom.conf
-# exec --no-startup-id numlockx off
-# exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id nitrogen --restore
+exec picom --config /home/doug/.config/picom/picom.conf
+exec --no-startup-id numlockx off
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xautolock -time 10 -locker "i3lock --image=/home/doug/.wallpapers/0040.png"
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
+
+# start i3bar
+bar {
+    position top
+    status_command i3status
+}
 
 # # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

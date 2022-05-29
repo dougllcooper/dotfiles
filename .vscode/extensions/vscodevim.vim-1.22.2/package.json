@@ -1218,11 +1218,11 @@
 	"__metadata": {
 		"id": "d96e79c6-8b25-4be3-8545-0e0ecefcae03",
 		"publisherId": "5d63889b-1b67-4b1f-8350-4f1dce041a26",
-		"publisherDisplayName": "vscodevim",
+		"publisherDisplayName": null,
 		"targetPlatform": "undefined",
 		"updated": false,
 		"isPreReleaseVersion": false,
 		"preRelease": false,
-		"installedTimestamp": 1653498697521
+		"installedTimestamp": 1653691192196
 	}
 }

@@ -1,4 +1,4 @@
-
+# Luke's config for the Zoomer Shell
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
@@ -13,41 +13,24 @@ setopt interactive_comments
 # set env variables
 export EDITOR="emacs"
 export PAGER="less"
-export XDG_CONFIG_HOME="$HOME/.config"
 
 # move stuff out of home directory into subdirectories
 # export GNUPGHOME="$HOME/.config/gnupg"
 # export CABAL_DIR="$HOME/.config/cabal"
-
-# $HOME/.local/bin/remaps
 
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
-# export NVM_DIR="$HOME/.config/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # add nix_path
 export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
 
 # add JAVA_PATH for nixos only
- export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
- export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
-#
-# JAVA_HOME
-# export JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
-# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-17.0.3.0.7-1.fc36.x86_64"
+# export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
+# export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
 
-# add for direnv for nix-shell environments
-eval "$(direnv hook zsh)"
-
-export PATH="$HOME/.local/bin:$PATH"
-
-# manual install of zsh-completions
-# fpath=($HOME/software/zsh-completions/src $fpath)
+export PATH="$PATH:$HOME/.local/bin"
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -101,10 +84,10 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Load autosuggestions
-# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load syntax highlighting
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # source token
 source "$HOME/.config/token"
@@ -118,7 +101,6 @@ alias clistd='config ls-tree -d main --name-only' # list tracked directories
 alias clistt='config ls-tree -r -d main --name-only' # list tracked tree directories
 alias csublist="config config --file .gitmodules --name-only --get-regexp path" # list submodules
 
-
 # aliases
 alias ls="ls -haN --color=always --group-directories-first"
 alias ll="ls -halN --color=always --group-directories-first"
@@ -131,16 +113,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias sbcl="rlwrap sbcl"
 
-# emacs, vim and other editors
-# alias emacs="emacsclient -c -a 'emacs'"
-# alias em="emacsclient -c -a 'emacs'"
+# emacs & vim
+# alias emacs="devour emacsclient -c -a 'emacs'"
+# alias em="devour emacsclient -c -a 'emacs'"
 # alias remacs="systemctl restart --user emacs.service"
-alias em="emacs"
 alias vim="nvim"
 alias vi="nvim"
-alias logseq="flatpak run com.logseq.Logseq"
-alias obsidian="flatpak run md.obsidian.Obsidian"
-alias ob="obsidian"
 
 # applications
 # alias obsidian="devour obsidian"
@@ -151,9 +129,9 @@ alias -g G="| egrep --color=always"
 alias -g L="| less"
 
 # doom emacs aliases
-alias doomdoc="~/.emacs.d/bin/doom doctor"
-alias doomsync="~/.emacs.d/bin/doom sync"
-alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+# alias doomdoc="~/.emacs.d/bin/doom doctor"
+# alias doomsync="~/.emacs.d/bin/doom sync"
+# alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 
 # nix aliases
 alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
@@ -165,10 +143,3 @@ alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -
 
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"
-
-# fedora stuff
-# alias d="sudo dnf"
-# alias dse="dnf search"
-# alias din="sudo dnf install"
-# alias dup="sudo dnf update"
-# alias dlist="dnf list --installed"

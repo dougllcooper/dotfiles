@@ -50,6 +50,7 @@ in {
     libreoffice-fresh
     calibre
     graphviz
+    treesheets
 
     # utilities
     pandoc
@@ -68,17 +69,18 @@ in {
     time
     jq
     rlwrap
-    ag
+    silver-searcher
     fzf
     unzip
     aspell
     aspellDicts.en
     xcape
+    numlockx
 
     # emacs compatibility stuff
     ripgrep
     fd
-    #nodejs
+    nodejs-18_x
     #nodePackages.npm
     #nodePackages.stylelint
     #nodePackages.js-beautify
@@ -88,12 +90,12 @@ in {
     # development
     cmake
     gnumake
-    #python39
-    #python39Packages.pandocfilters
-    #python39Packages.pip
-    #python39Packages.setuptools
-    #python39Packages.grip
-    #python39Packages.cookiecutter
+    python39
+    python39Packages.pandocfilters
+    python39Packages.pip
+    python39Packages.setuptools
+    python39Packages.grip
+    python39Packages.cookiecutter
 
     # xorg stuff
     xorg.xkill
@@ -103,10 +105,10 @@ in {
 
     # unstable stuff
     # unstable.zettlr
-    unstable.neovim
-    unstable.zotero
-    unstable.sbcl
-    unstable.emacs
-    unstable.vscode
+    neovim
+    zotero
+    sbcl
+    emacs28NativeComp
+    vscode
   ];
 }

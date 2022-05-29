@@ -6,19 +6,36 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # allow unfree software and joypixels install
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.joypixels.acceptLicense = true;
+
+  # allow automatic updgrades
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.channel = https://nixos.org/channels/nixos-22.05;
 
   networking.hostName = "ScreamingMonkey"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
+
+  # links /libexec from devivations to /run/current-system/sw
+  environment.pathsToLink = [ "/libexec" ];
+
+  # setup experimental features nix-command and flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+    experimental-features = nix-command flakes
+    '';
+  };
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -52,58 +69,30 @@
     keyMap = "us";
   };
 
-  # Enable the X11 windowing system.
-  # Enable xfce as desktop manager.
-  # Enable xmonad as window manager.
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager = {
-  #     xterm.enable = false;
-  #     xfce = {
-  #       enable = true;
-  #       #      noDesktop = true;
-  #       enableXfwm = false;
-  #     };
-  #   };
-  #   windowManager = {
-  #     xmonad = {
-  #       enable = true;
-  #       enableContribAndExtras = true;
-  #       extraPackages = haskellPackages: [
-  #         haskellPackages.xmonad-contrib
-  #         haskellPackages.xmonad-extras
-  #         haskellPackages.xmonad
-  #       ];
-  #     };
-  #   };
-  #   displayManager.lightdm.enable = true;
-  #   displayManager.defaultSession = "xfce+xmonad";
-  # };
-  # Enable xfce as desktop manager.
-  # Enable i3 as window manager.
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager = {
-  #     default = "xfce";
-  #     xterm.enable = false;
-  #     xfce = {
-  #       enable = true;
-  #       noDesktop = true;
-  #       enableXfwm = false;
-  #     };
-  #   };
-  #   windowManager.i3.enable = true;
-  #   windowManager.i3.package = pkgs.i3-gaps;
-  # };
-
+  # i3wm
   services.xserver = {
     enable = true;
+    videoDrivers = [ "intel" ];
+
     desktopManager = {
       xterm.enable = false;
-      xfce.enable = true;
     };
-    displayManager.lightdm.enable = true;
-    displayManager.defaultSession = "xfce";
+ 
+    displayManager = {
+      defaultSession = "none+i3";
+    };
+
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+      extraPackages = with pkgs; [
+        dmenu
+	rofi
+	i3status
+	i3lock
+	i3blocks
+      ];
+    };
   };
 
   # Configure keymap in X11
@@ -166,10 +155,16 @@
     shellcheck
     file
     tree
+    pcmanfm
 
     # xorg and xwindows stuff
-    xfce.xfce4-whiskermenu-plugin
-    xfce.xfce4-clipman-plugin
+    # xfce.xfce4-whiskermenu-plugin
+    # xfce.xfce4-clipman-plugin
+    lxappearance
+    nitrogen
+    picom
+    xfce.xfce4-power-manager
+    xautolock
 
     # system stuff
     alsa-utils
@@ -196,6 +191,9 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # enable dconf
+  programs.dconf.enable = true;
 
   # List services that you want to enable:
 
@@ -239,6 +237,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "22.05"; # Did you read the comment?
 
 }

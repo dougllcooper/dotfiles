@@ -356,11 +356,11 @@
 	"__metadata": {
 		"id": "b63c44fd-0457-4696-99e9-dbfdf70d77de",
 		"publisherId": "17fd9a78-e430-4a78-add2-ade4a8830352",
-		"publisherDisplayName": "Ritwick Dey",
+		"publisherDisplayName": null,
 		"targetPlatform": "undefined",
 		"updated": false,
 		"isPreReleaseVersion": false,
 		"preRelease": false,
-		"installedTimestamp": 1653150277931
+		"installedTimestamp": 1653673795745
 	}
 }
