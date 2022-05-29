@@ -1,0 +1,23 @@
+.cp__sidebar-help-btn {
+	  display: none;
+}
+
+/*
+.references.mt-6.flex-1.flex-row{ /*hide linked and unlinked references*/
+  display: none;
+*/
+
+.table-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+table td {
+  min-width:100px;
+  word-wrap:break-word;
+}
+
+iframe[id^="youtube-player"]{
+width: 800px;
+height: 450px;
+}

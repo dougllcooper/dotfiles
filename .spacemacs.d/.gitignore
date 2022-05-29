@@ -1,0 +1,7 @@
+# Git Ignore patterns for Spacemacs configuration
+
+# Environment variables are automatically generated
+.spacemacs.env
+recentf
+/emacs-custom-settings.el
+/clojure-lsp-server-clj-kondo
