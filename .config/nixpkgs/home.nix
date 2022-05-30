@@ -80,11 +80,11 @@ in {
     # emacs compatibility stuff
     ripgrep
     fd
-    nodejs-18_x
+    #nodejs-18_x
     #nodePackages.npm
     #nodePackages.stylelint
     #nodePackages.js-beautify
-    html-tidy
+    #html-tidy
     nixfmt
 
     # development
@@ -96,12 +96,21 @@ in {
     python39Packages.setuptools
     python39Packages.grip
     python39Packages.cookiecutter
+    jdk
+    # unstable.clojure
+    # unstable.clj-kondo
+    # unstable.clojure-lsp
+    direnv
 
     # xorg stuff
     xorg.xkill
     xorg.xprop
+    xorg.xmodmap
     xdotool
     xclip
+    volumeicon
+    networkmanagerapplet
+    pulsemixer
 
     # unstable stuff
     # unstable.zettlr
@@ -110,5 +119,7 @@ in {
     sbcl
     emacs28NativeComp
     vscode
+    unstable.logseq
+    unstable.obsidian
   ];
 }

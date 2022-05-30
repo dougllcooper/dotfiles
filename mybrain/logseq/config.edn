@@ -110,5 +110,6 @@
 ;; :default-home {:page "Python"}
 :sidebar ["Contents" "Recent" "TODO" "DOING" "DONE" "Page graph" "Help"]
  :favorites []
+ :shortcuts {:editor/up "up", :editor/down "down"}
  
  }

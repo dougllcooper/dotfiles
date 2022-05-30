@@ -27,10 +27,13 @@ HISTFILE=~/.cache/zsh/history
 export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
 
 # add JAVA_PATH for nixos only
-# export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
-# export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
+export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
+export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
 
 export PATH="$PATH:$HOME/.local/bin"
+
+# setup for direnv
+eval "$(direnv hook zsh)"
 
 # Basic auto/tab complete:
 autoload -U compinit

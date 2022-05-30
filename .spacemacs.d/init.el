@@ -245,7 +245,7 @@ This function should only modify configuration layer settings."
      ;; Highlight changes in buffers
      ;; SPC g . transient state for navigating changes
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
+                      version-control-diff-tool 'git-gutter+
                       version-control-global-margin t)
 
 
@@ -962,7 +962,7 @@ before packages are loaded."
   ;; Version Control configuration - Git, etc
   ;;
   ;; diff-hl - diff hightlights in right gutter as you type
-  (diff-hl-flydiff-mode)
+  ;; (diff-hl-flydiff-mode)
   ;;
   ;; Load in magithub features after magit package has loaded
   ;; (use-package magithub

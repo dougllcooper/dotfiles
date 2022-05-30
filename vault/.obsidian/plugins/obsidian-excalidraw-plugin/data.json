@@ -193,8 +193,9 @@
     }
   },
   "defaultTrayMode": false,
-  "previousRelease": "1.6.28",
+  "previousRelease": "1.6.33",
   "showReleaseNotes": true,
+  "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js",
   "fieldSuggestor": true,
   "loadCount": 1,
   "patchCommentBlock": false,
