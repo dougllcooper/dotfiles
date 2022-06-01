@@ -272,7 +272,7 @@ bindsym $mod+9 exec i3lock --image=/home/doug/.wallpapers/0040.png
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
-exec picom --config /home/doug/.config/picom/picom.conf
+exec --no-startup-id picom --config /home/doug/.config/picom/picom.conf
 exec --no-startup-id numlockx off
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager

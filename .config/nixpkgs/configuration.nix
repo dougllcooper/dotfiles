@@ -77,7 +77,7 @@
     desktopManager = {
       xterm.enable = false;
     };
- 
+
     displayManager = {
       defaultSession = "none+i3";
     };
@@ -105,6 +105,7 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
   # if you use pulseaudio
   nixpkgs.config.pulseaudio = true;
 
@@ -161,8 +162,6 @@
     # xfce.xfce4-whiskermenu-plugin
     # xfce.xfce4-clipman-plugin
     lxappearance
-    nitrogen
-    picom
     xfce.xfce4-power-manager
     xautolock
 

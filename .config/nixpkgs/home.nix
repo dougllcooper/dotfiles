@@ -32,35 +32,7 @@ in {
     };
   };
 
-  # java
-  # programs.java = {
-  #  enable = true;
-  # };
-
-  # test overlays
-
-   # don't work
-   # nixpkgs.overlays = [ (self: super: {
-   #  gerbil = super.gerbil.overrideAttrs (old: {
-   #    src = super.fetchFromGitHub {
-   #      owner = "vyzo";
-   #      repo = "gerbil";
-   #      rev = "96025a9c0301d03147ef409f5cc568a00d9f05d4";
-   #      # If you don't know the hash, the first time, set:
-   #      # sha256 = "0000000000000000000000000000000000000000000000000000";
-   #      # then nix will fail the build with such an error message:
-   #      # hash mismatch in fixed-output derivation '/nix/store/m1ga09c0z1a6n7rj8ky3s31dpgalsn0n-source':
-   #      # wanted: sha256:0000000000000000000000000000000000000000000000000000
-   #      # got:    sha256:173gxk0ymiw94glyjzjizp8bv8g72gwkjhacigd1an09jshdrjb4
-   #      sha256 = "9SS9CrTv+XzQf3W/DyTSH47wYM0qOrrBu4lMGNQE6vE=";
-
-   #    };
-   #  });
-   #  }
-   #  )];
-
-
-  # installing software
+ # installing software
   home.packages = with pkgs; [
     # applications, chat, torrents, internet stuff
     hexchat
@@ -99,6 +71,11 @@ in {
     aspellDicts.en
     xcape
     numlockx
+    podman
+    distrobox
+    blueberry
+    nitrogen
+    picom
 
     # emacs compatibility stuff
     ripgrep
@@ -144,6 +121,5 @@ in {
     vscode
     unstable.logseq
     unstable.obsidian
-    gerbil
   ];
 }

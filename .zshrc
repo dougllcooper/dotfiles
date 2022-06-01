@@ -13,6 +13,7 @@ setopt interactive_comments
 # set env variables
 export EDITOR="emacs"
 export PAGER="less"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # move stuff out of home directory into subdirectories
 # export GNUPGHOME="$HOME/.config/gnupg"
