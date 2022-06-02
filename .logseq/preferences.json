@@ -1,9 +1,10 @@
 {
   "theme": {
-    "name": "Solarized Extended Theme",
-    "url": "assets:///home/doug/.logseq/plugins/logseq-solarized-extended-theme/dist/theme.css",
-    "description": "Light sepia-solarized Logseq theme with extra stuff",
-    "pid": "logseq-solarized-extended-theme"
+    "name": "Bonofix Theme",
+    "url": "assets:///home/doug/.logseq/plugins/logseq-bonofix-theme/custom.css",
+    "description": "A custom theme focus on UI bug fix and mobile improvement",
+    "pid": "logseq-bonofix-theme",
+    "selected": false
   },
   "themes": {
     "mode": "light",

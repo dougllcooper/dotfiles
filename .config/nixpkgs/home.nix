@@ -76,6 +76,8 @@ in {
     blueberry
     nitrogen
     picom
+    rnix-lsp
+    nixpkgs-fmt
 
     # emacs compatibility stuff
     ripgrep
