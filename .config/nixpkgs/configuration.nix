@@ -43,6 +43,10 @@
   # setup docker
   virtualisation.docker.enable = true;
 
+  # setup libvirtd
+  virtualisation.libvirtd.enable = true;
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+
   # needed for store VSCode auth token
   services.gnome.gnome-keyring.enable = true;
 
@@ -134,6 +138,7 @@
       "audio"
       "video"
       "docker"
+      "libvirtd"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };

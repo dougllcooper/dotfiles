@@ -46,6 +46,7 @@ in {
     calibre
     graphviz
     treesheets
+    virt-manager
 
     # utilities
     pandoc

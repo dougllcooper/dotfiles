@@ -1,9 +1,10 @@
 {
   "theme": {
-    "name": "Bonofix Theme",
-    "url": "assets:///home/doug/.logseq/plugins/logseq-bonofix-theme/custom.css",
-    "description": "A custom theme focus on UI bug fix and mobile improvement",
-    "pid": "logseq-bonofix-theme",
+    "name": "Bear - Dark",
+    "url": "assets:///home/doug/.logseq/plugins/logseq-bear-theme/bear.css",
+    "description": "You're braver than you believe, stronger than you seem and smarter than you think. A bear theme for Logseq",
+    "mode": "dark",
+    "pid": "logseq-bear-theme",
     "selected": false
   },
   "themes": {

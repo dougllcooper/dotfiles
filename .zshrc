@@ -24,6 +24,9 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
+# for vagrant
+export VAGRANT_DEFAULT_PROVIDER=libvirt
+
 # add nix_path
 export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
 
@@ -143,7 +146,7 @@ alias nixReb="sudo nixos-rebuild switch"
 alias nixse="nix-env -qasP --description"
 alias nixUpdateD="sudo nix-channel --update --dry-run; nix-channel --update --dry-run; nix-env -u --always --dry-run"
 alias nixUpdate="sudo nix-channel --update; nix-channel --update; nix-env -u --always; systemctl daemon-reload; systemctl restart nix-daemon"
-alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
+alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; sudo nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
 
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"

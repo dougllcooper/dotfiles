@@ -1,6 +1,6 @@
-[{:block/name "2022-06-01",
-  :block/created-at 1654128999796,
-  :block/updated-at 1654128999796}
+[{:block/name "2022-06-02",
+  :block/created-at 1654200203164,
+  :block/updated-at 1654200203164}
  {:block/name "a",
   :block/created-at 1651167287011,
   :block/updated-at 1651167287011}
@@ -46,6 +46,9 @@
  {:block/name "in-progress",
   :block/created-at 1651167287011,
   :block/updated-at 1651167287011}
+ {:block/name "jun 1st, 2022",
+  :block/created-at 1654200201120,
+  :block/updated-at 1654200201120}
  {:block/name "later",
   :block/created-at 1651167287011,
   :block/updated-at 1651167287011}
@@ -88,6 +91,9 @@
  {:block/name "may 9th, 2022",
   :block/created-at 1652115436285,
   :block/updated-at 1653862658360}
+ {:block/name "nixos",
+  :block/created-at 1654200201108,
+  :block/updated-at 1654200201108}
  {:block/name "now",
   :block/created-at 1651167287011,
   :block/updated-at 1651167287011}
