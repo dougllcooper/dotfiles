@@ -10,5 +10,7 @@ pkgs.mkShell {
     nodePackages.stylelint
     nodePackages.js-beautify
     nodePackages.prettier
+    html-tidy
+    nixfmt
   ];
 }

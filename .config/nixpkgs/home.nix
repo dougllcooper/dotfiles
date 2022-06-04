@@ -79,15 +79,17 @@ in {
     picom
     rnix-lsp
     nixpkgs-fmt
+    bat
 
     # emacs compatibility stuff
     ripgrep
     fd
     #nodejs-18_x
-    #nodePackages.npm
     #nodePackages.stylelint
     #nodePackages.js-beautify
-    #html-tidy
+    #nodePackages.prettier
+    #nodePackages.yarn
+    html-tidy
     nixfmt
 
     # development

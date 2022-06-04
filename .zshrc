@@ -12,8 +12,14 @@ setopt interactive_comments
 
 # set env variables
 export EDITOR="emacs"
-export PAGER="less"
+export PAGER="bat"
 export XDG_CONFIG_HOME="$HOME/.config"
+#
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# zsh theme
+ZSH_THEME="ys"
 
 # move stuff out of home directory into subdirectories
 # export GNUPGHOME="$HOME/.config/gnupg"
@@ -24,11 +30,20 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
+# FZF
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --padding=1"
+
 # for vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # add nix_path
 export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
+
+# setup for nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add JAVA_PATH for nixos only
 export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
@@ -45,6 +60,9 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+
+# manually install zsh-nvm plugin. Install nvm automatically.
+# source ~/software/.zsh-nvm/zsh-nvm.plugin.zsh
 
 # vi mode
 bindkey -v
@@ -89,6 +107,15 @@ bindkey '^[[3~' delete-char
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # Load autosuggestions
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
