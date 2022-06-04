@@ -8,7 +8,7 @@
     "selected": false
   },
   "themes": {
-    "mode": "light",
+    "mode": "dark",
     "light": {
       "name": "Solarized Extended Theme",
       "url": "assets:///home/doug/.logseq/plugins/logseq-solarized-extended-theme/dist/theme.css",
@@ -20,13 +20,11 @@
       "selected": false
     },
     "dark": {
-      "name": "Laurel theme",
-      "url": "assets:///home/doug/.logseq/plugins/logseq-laurel-theme/custom.css",
-      "description": "A custom theme forked from logseq-clean-themes",
-      "pid": "logseq-laurel-theme",
-      "group-first": false,
-      "group-desc": null,
+      "name": "Bear - Dark",
+      "url": "assets:///home/doug/.logseq/plugins/logseq-bear-theme/bear.css",
+      "description": "You're braver than you believe, stronger than you seem and smarter than you think. A bear theme for Logseq",
       "mode": "dark",
+      "pid": "logseq-bear-theme",
       "selected": false
     }
   },

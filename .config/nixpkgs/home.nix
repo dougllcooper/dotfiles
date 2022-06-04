@@ -47,6 +47,7 @@ in {
     graphviz
     treesheets
     virt-manager
+    galculator
 
     # utilities
     pandoc
@@ -80,15 +81,16 @@ in {
     rnix-lsp
     nixpkgs-fmt
     bat
+    mlocate
 
     # emacs compatibility stuff
     ripgrep
     fd
-    #nodejs-18_x
-    #nodePackages.stylelint
-    #nodePackages.js-beautify
-    #nodePackages.prettier
-    #nodePackages.yarn
+    nodejs-18_x
+    nodePackages.stylelint
+    nodePackages.js-beautify
+    nodePackages.prettier
+    nodePackages.yarn
     html-tidy
     nixfmt
 
@@ -106,6 +108,8 @@ in {
     # unstable.clj-kondo
     # unstable.clojure-lsp
     direnv
+    lua
+    luarocks
 
     # xorg stuff
     xorg.xkill

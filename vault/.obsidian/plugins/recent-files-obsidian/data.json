@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "Untitled",
+      "path": "Untitled.md"
+    },
+    {
       "basename": "LYT Kit",
       "path": "LYT Kit.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "Solutions to Flow Stoppers",
       "path": "Cards/Solutions to Flow Stoppers.md"
-    },
-    {
-      "basename": "Small Wins foster a Sense of Control",
-      "path": "Cards/Small Wins foster a Sense of Control.md"
     }
   ],
   "omittedPaths": [],

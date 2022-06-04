@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "LYT Kit.md",
+            "file": "Untitled.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -21,8 +21,14 @@
             {
               "leaf": "cc83254e48567c61",
               "group": null,
+              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Untitled.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+            },
+            {
+              "leaf": "cc83254e48567c61",
+              "group": null,
               "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"scroll\":0.7145847871598046}"
+              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.7145847871598046}"
             }
           ]
         }
@@ -117,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LYT Kit.md"
+                "file": "Untitled.md"
               }
             },
             "pane-relief:history-v1": {
@@ -150,7 +156,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LYT Kit.md",
+                "file": "Untitled.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +177,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LYT Kit.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +193,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "LYT Kit.md",
+                "file": "Untitled.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -228,6 +234,7 @@
   },
   "active": "cc83254e48567c61",
   "lastOpenFiles": [
+    "Untitled.md",
     "LYT Kit.md",
     "Tag Taxonomy.md",
     "Home.md",
@@ -236,7 +243,6 @@
     "tag taxonomy.md",
     "Outliner test.md",
     "Install Nixos on OpenZFS.md",
-    "Cards/The forest entrance.md",
-    "Cards/Guiding Values of PKM.md"
+    "Cards/The forest entrance.md"
   ]
 }

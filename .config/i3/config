@@ -11,6 +11,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $alt Mod1
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -72,6 +73,7 @@ bindsym $mod+Shift+z exec emacs
 bindsym $mod+Shift+o exec obsidian
 bindsym $mod+Shift+v exec virt-manager
 bindsym $mod+Shift+f exec ~/software/freeplane-1.10.2/freeplane.sh
+bindsym $mod+$alt+c exec galculator
 
 # focus_follows_mouse no
 
