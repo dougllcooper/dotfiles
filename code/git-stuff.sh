@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # clojure deps and clojure-lsp config
 git clone https://github.com/dougllcooper/clojure-deps-edn ~/.config/clojure
@@ -11,7 +11,7 @@ git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://github.com/eendroroy/alacritty-theme ~/software/alacritty-theme
 
 # sbcl source code for sbcl code definitions
-wget -O sbcl-2.2.5-source.tar.bz2 http://prdownloads.sourceforge.net/sbcl/sbcl-2.2.5-source.tar.bz2\?download
+wget -O ~/software/sbcl-2.2.5-source.tar.bz2 http://prdownloads.sourceforge.net/sbcl/sbcl-2.2.5-source.tar.bz2\?download
 
 # clojure source code for clojure deps.edn
 git clone https://github.com/clojure/clojure ~/software/clojure-src

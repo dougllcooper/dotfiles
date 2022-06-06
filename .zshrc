@@ -49,10 +49,10 @@ export NVM_DIR="$HOME/.config/nvm"
 export JAVA_HOME="$(readlink -e $(type -p javac) | sed -e 's/\/bin\/javac//g')"
 export JAVA_SRC="$(readlink -e $(type -p javac) | sed -e 's/\/openjdk\/bin\/javac//g')"
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.npm-packages/bin"
 
 # setup for direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -163,9 +163,9 @@ alias -g G="| egrep --color=always"
 alias -g L="| less"
 
 # doom emacs aliases
-# alias doomdoc="~/.emacs.d/bin/doom doctor"
-# alias doomsync="~/.emacs.d/bin/doom sync"
-# alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+alias doomdoc="~/.emacs.d/bin/doom doctor"
+alias doomsync="~/.emacs.d/bin/doom sync"
+alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 
 # nix aliases
 alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"

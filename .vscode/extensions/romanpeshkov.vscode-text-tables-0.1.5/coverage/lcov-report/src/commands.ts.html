@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/commands.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> commands.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.69% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>117/121</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.63% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>29/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>114/118</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as vscode from 'vscode';
+import * as cfg from './configuration';
+import { Table, RowType, Stringifier, TableNavigator, Parser } from './ttTable';
+&nbsp;
+/**
+ * Create new table with specified rows and columns count in position of cursor
+ */
+export function createTable(rowsCount: number, colsCount: number, editor: vscode.TextEditor,
+    configuration: cfg.Configuration, stringifier: Stringifier): Promise&lt;void&gt; {
+    const table = new Table();
+    for (let i = 0; i &lt; rowsCount + 1; i++) {
+        table.addRow(RowType.Data, new Array(colsCount).fill(''));
+    }
+    table.rows[1].type = RowType.Separator;
+&nbsp;
+    // TODO: Refactor this!
+    if (configuration.mode === cfg.Mode.Markdown) {
+        table.cols.forEach(c =&gt; c.width = 3);
+    }
+&nbsp;
+    return new Promise&lt;void&gt;(resolve =&gt; {
+        const currentPosition = editor.selection.start;
+        editor
+            .edit(b =&gt; b.insert(currentPosition, stringifier.stringify(table)))
+            .then(() =&gt; {
+                editor.selection = new vscode.Selection(currentPosition, currentPosition);
+                resolve();
+            });
+    });
+}
+&nbsp;
+/**
+ * Swap row under cursor with row below
+ */
+export function moveRowDown(editor: vscode.TextEditor, _e: vscode.TextEditorEdit, _range: vscode.Range, table: Table) {
+    const rowNum = editor.selection.end.line - table.startLine;
+    if (rowNum &gt;= table.rows.length - 1) {
+        vscode.window.showWarningMessage('Cannot move row further');
+        return;
+    }
+    vscode.commands.executeCommand('editor.action.moveLinesDownAction');
+}
+&nbsp;
+/**
+ * Swap row under cursor with row above
+ */
+export function moveRowUp(editor: vscode.TextEditor, _e: vscode.TextEditorEdit, _range: vscode.Range, table: Table) {
+    const rowNum = editor.selection.start.line - table.startLine;
+    if (rowNum &lt;= 0) {
+        vscode.window.showWarningMessage('Cannot move row further');
+        return;
+    }
+    vscode.commands.executeCommand('editor.action.moveLinesUpAction');
+}
+&nbsp;
+/**
+ * Move cursor to the next cell of table
+ */
+export async function gotoNextCell(editor: vscode.TextEditor, _range: vscode.Range, table: Table,
+    stringifier: Stringifier) {
+&nbsp;
+    const nav = new TableNavigator(table);
+    const newPos = nav.nextCell(editor.selection.start);
+    if (newPos) {
+        await editor.edit(e =&gt; formatUnderCursor(editor, e, _range, table, stringifier));
+        editor.selection = new vscode.Selection(newPos, newPos);
+    } else {
+        table.addRow(RowType.Data, new Array(table.cols.length).fill(''));
+        await gotoNextCell(editor, _range, table, stringifier);
+    }
+}
+&nbsp;
+/**
+ * Move cursor to the previous cell of table
+ */
+export function gotoPreviousCell(editor: vscode.TextEditor, _e: vscode.TextEditorEdit, _range: vscode.Range, table: Table) {
+    const nav = new TableNavigator(table);
+    const newPos = nav.previousCell(editor.selection.start);
+    if (newPos) {
+        editor.selection = new vscode.Selection(newPos, newPos);
+    }
+}
+&nbsp;
+/**
+ * Format table under cursor
+ */
+export async function formatUnderCursor(editor: vscode.TextEditor, e: vscode.TextEditorEdit,
+    range: vscode.Range, table: Table, stringifier: Stringifier) {
+    const newText = stringifier.stringify(table);
+    const prevSel = editor.selection.start;
+&nbsp;
+    e.replace(range, newText);
+    editor.selection = new vscode.Selection(prevSel, prevSel);
+}
+&nbsp;
+/**
+ * Swap column under cursor with column on the right
+ */
+export async function moveColRight(editor: vscode.TextEditor, e: vscode.TextEditorEdit,
+    range: vscode.Range, table: Table, stringifier: Stringifier) {
+    const rowCol = rowColFromPosition(table, editor.selection.start);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (rowCol.col &lt; 0) {
+<span class="cstat-no" title="statement not covered" >        vscode.window.showWarningMessage('Not in table data field');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+&nbsp;
+    if (rowCol.col &gt;= table.cols.length - 1 ) {
+        vscode.window.showWarningMessage('Cannot move column further right');
+        return;
+    }
+&nbsp;
+    [table.cols[rowCol.col], table.cols[rowCol.col + 1]] = [table.cols[rowCol.col + 1], table.cols[rowCol.col]];
+&nbsp;
+    table.rows.forEach((_, i) =&gt; {
+        const v1 = table.getAt(i, rowCol.col);
+        const v2 = table.getAt(i, rowCol.col + 1);
+        table.setAt(i, rowCol.col + 1, v1);
+        table.setAt(i, rowCol.col, v2);
+    });
+&nbsp;
+    const newText = stringifier.stringify(table);
+    e.replace(range, newText);
+    await gotoNextCell(editor, range, table, stringifier);
+}
+&nbsp;
+/**
+ * Swap column under cursor with column on the left
+ */
+export async function moveColLeft(editor: vscode.TextEditor, e: vscode.TextEditorEdit,
+    range: vscode.Range, table: Table, stringifier: Stringifier) {
+    const rowCol = rowColFromPosition(table, editor.selection.start);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (rowCol.col &lt; 0) {
+<span class="cstat-no" title="statement not covered" >        vscode.window.showWarningMessage('Not in table data field');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+&nbsp;
+    if (rowCol.col === 0) {
+        vscode.window.showWarningMessage('Cannot move column further left');
+        return;
+    }
+&nbsp;
+    [table.cols[rowCol.col], table.cols[rowCol.col - 1]] = [table.cols[rowCol.col - 1], table.cols[rowCol.col]];
+&nbsp;
+    table.rows.forEach((_, i) =&gt; {
+        const v1 = table.getAt(i, rowCol.col);
+        const v2 = table.getAt(i, rowCol.col - 1);
+        table.setAt(i, rowCol.col - 1, v1);
+        table.setAt(i, rowCol.col, v2);
+    });
+&nbsp;
+    const newText = stringifier.stringify(table);
+    e.replace(range, newText);
+    await gotoPreviousCell(editor, e, range, table);
+}
+&nbsp;
+/**
+ * Clear cell under cursor
+ */
+export function clearCell(editor: vscode.TextEditor, edit: vscode.TextEditorEdit, parser: Parser) {
+    const document = editor.document;
+    const currentLineNumber = editor.selection.start.line;
+    const currentLine = document.lineAt(currentLineNumber);
+&nbsp;
+    if (parser.isSeparatorRow(currentLine.text)) {
+        vscode.window.showInformationMessage('Not in table data field');
+        return;
+    }
+&nbsp;
+    const leftSepPosition = currentLine.text.lastIndexOf('|', editor.selection.start.character - 1);
+    let rightSepPosition = currentLine.text.indexOf('|', editor.selection.start.character);
+    if (rightSepPosition &lt; 0) {
+        rightSepPosition = currentLine.range.end.character;
+    }
+&nbsp;
+    if (leftSepPosition === rightSepPosition) {
+        vscode.window.showInformationMessage('Not in table data field');
+        return;
+    }
+&nbsp;
+    const r = new vscode.Range(currentLineNumber, leftSepPosition + 1, currentLineNumber, rightSepPosition);
+    edit.replace(r, ' '.repeat(rightSepPosition - leftSepPosition - 1));
+    const newPos = new vscode.Position(currentLineNumber, leftSepPosition + 2);
+    editor.selection = new vscode.Selection(newPos, newPos);
+}
+&nbsp;
+/**
+ * Moves cursor to the next row. If cursor is in the last row of table, create new row
+ */
+export function nextRow(editor: vscode.TextEditor, _e: vscode.TextEditorEdit, range: vscode.Range, table: Table,
+    stringifier: Stringifier) {
+    const inLastRow = range.end.line === editor.selection.start.line;
+&nbsp;
+    if (inLastRow) {
+        table.addRow(RowType.Data, new Array(table.cols.length).fill(''));
+    }
+&nbsp;
+    // Editing by "_e" messes cursor position. Looks like edits are applied once the command is finished,
+    // but it's too late
+    editor.edit(b =&gt; b.replace(range, stringifier.stringify(table)))
+        .then(() =&gt; {
+            const nav = new TableNavigator(table);
+            const nextRowPos = nav.nextRow(editor.selection.start);
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (nextRowPos) {
+                editor.selection = new vscode.Selection(nextRowPos, nextRowPos);
+            }
+        });
+}
+&nbsp;
+function rowColFromPosition(table: Table, position: vscode.Position): { row: number, col: number } {
+    const result = { row: -1, col: -1 };
+&nbsp;
+    result.row = position.line - table.startLine;
+    let counter = 1;
+    for (let i = 0; i &lt; table.cols.length; ++i) {
+        const col = table.cols[i];
+        if (position.character &gt;= counter &amp;&amp; position.character &lt; counter + col.width + 3) {
+            result.col = i;
+            break;
+        }
+&nbsp;
+        counter += col.width + 3;
+    }
+&nbsp;
+    return result;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu May 03 2018 01:42:11 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

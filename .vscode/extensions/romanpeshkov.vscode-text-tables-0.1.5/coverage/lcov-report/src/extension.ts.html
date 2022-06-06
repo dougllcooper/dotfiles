@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/extension.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> extension.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>76/97</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.75% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.66% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>73/94</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+import * as vscode from 'vscode';
+import * as utils from './utils';
+import * as cmd from './commands';
+import { OrgLocator, OrgParser, OrgStringifier } from './ttOrg';
+import { Locator, Parser, Stringifier, Table } from './ttTable';
+import { MarkdownLocator, MarkdownParser, MarkdownStringifier } from './ttMarkdown';
+import { isUndefined } from 'util';
+import { registerContext, ContextType, enterContext, exitContext, restoreContext } from './context';
+import * as cfg from './configuration';
+&nbsp;
+let locator: Locator;
+let parser: Parser;
+let stringifier: Stringifier;
+let configuration: cfg.Configuration;
+&nbsp;
+function loadConfiguration() {
+    configuration = cfg.build();
+&nbsp;
+    if (configuration.mode === cfg.Mode.Org) {
+        locator = new OrgLocator();
+        parser = new OrgParser();
+        stringifier = new OrgStringifier();
+    } else {
+        locator = new MarkdownLocator();
+        parser = new MarkdownParser();
+        stringifier = new MarkdownStringifier();
+    }
+}
+&nbsp;
+export function activate(ctx: vscode.ExtensionContext) {
+    loadConfiguration();
+&nbsp;
+    const statusItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+    registerContext(ContextType.TableMode, '$(book) Table Mode', statusItem);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (configuration.showStatus) {
+        statusItem.show();
+    }
+&nbsp;
+    vscode.workspace.onDidChangeConfiguration(() =&gt; {
+        loadConfiguration();
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (configuration.showStatus) {
+            statusItem.show();
+        } else {
+<span class="cstat-no" title="statement not covered" >            statusItem.hide();</span>
+        }
+    });
+&nbsp;
+    vscode.window.onDidChangeActiveTextEditor(e =&gt; {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (e) {
+            restoreContext(e);
+        }
+    });
+&nbsp;
+    ctx.subscriptions.push(vscode.commands.registerCommand('text-tables.enable', () =&gt; {
+<span class="cstat-no" title="statement not covered" >        vscode.window.showInformationMessage('Text tables enabled!');</span>
+    }));
+&nbsp;
+    ctx.subscriptions.push(vscode.commands.registerTextEditorCommand('text-tables.tableModeOn',
+        (e) =&gt; <span class="cstat-no" title="statement not covered" >enterContext(e, ContextType.TableMode))</span>);
+    ctx.subscriptions.push(vscode.commands.registerTextEditorCommand('text-tables.tableModeOff',
+        (e) =&gt; <span class="cstat-no" title="statement not covered" >exitContext(e, ContextType.TableMode))</span>);
+&nbsp;
+    ctx.subscriptions.push(registerTableCommand('text-tables.moveRowDown', cmd.moveRowDown, {format: true}));
+    ctx.subscriptions.push(registerTableCommand('text-tables.moveRowUp', cmd.moveRowUp, {format: true}));
+    ctx.subscriptions.push(registerTableCommand('text-tables.moveColRight', (editor, e, range, table) =&gt; {
+        cmd.moveColRight(editor, e, range, table, stringifier);
+    }));
+    ctx.subscriptions.push(registerTableCommand('text-tables.moveColLeft', (editor, e, range, table) =&gt; {
+        cmd.moveColLeft(editor, e, range, table, stringifier);
+    }));
+&nbsp;
+    ctx.subscriptions.push(vscode.commands.registerTextEditorCommand('text-tables.clearCell',
+        (e, ed) =&gt; cmd.clearCell(e, ed, parser)));
+&nbsp;
+    ctx.subscriptions.push(vscode.commands.registerCommand('text-tables.gotoNextCell', async () =&gt; {
+        // TODO: Refactor this by reimplementing registerTableCommand function
+        // Internally registerTableCommand uses registerTextEditorCommand which doesn't allow to apply multiple edits
+        // from different places.
+        const editor = vscode.window.activeTextEditor;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isUndefined(editor)) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        const tableRange = locator.locate(editor.document, editor.selection.start.line);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isUndefined(tableRange)) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+        const selectedText = editor.document.getText(tableRange);
+        const table = parser.parse(selectedText);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isUndefined(table)) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        table.startLine = tableRange.start.line;
+&nbsp;
+        await cmd.gotoNextCell(editor, tableRange, table, stringifier);
+    }));
+    // ctx.subscriptions.push(registerTableCommand('text-tables.gotoNextCell', (editor, e, range, table) =&gt; {
+    //     cmd.gotoNextCell(editor, e, range, table, stringifier);
+    // }));
+    ctx.subscriptions.push(registerTableCommand('text-tables.gotoPreviousCell', cmd.gotoPreviousCell, {format: true}));
+    ctx.subscriptions.push(registerTableCommand('text-tables.nextRow', (editor, e, range, table) =&gt; {
+        cmd.nextRow(editor, e, range, table, stringifier);
+    }));
+&nbsp;
+    // Format table under cursor
+    ctx.subscriptions.push(registerTableCommand('text-tables.formatUnderCursor',
+        (editor, e, range, table) =&gt; cmd.formatUnderCursor(editor, e, range, table, stringifier)));
+&nbsp;
+    ctx.subscriptions.push(vscode.commands.registerTextEditorCommand('text-tables.createTable', editor =&gt; {
+<span class="cstat-no" title="statement not covered" >        const opts: vscode.InputBoxOptions = {</span>
+            value: '5x2',
+            prompt: 'Table size Columns x Rows (e.g. 5x2)',
+            validateInput: (value: string) =&gt; {
+<span class="cstat-no" title="statement not covered" >                if (!utils.tableSizeRe.test(value)) {</span>
+<span class="cstat-no" title="statement not covered" >                    return 'Provided value is invalid. Please provide the value in format Columns x Rows (e.g. 5x2)';</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vscode.window.showInputBox(opts).then(x =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (!x) {</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            const match = x.match(utils.tableSizeRe);</span>
+<span class="cstat-no" title="statement not covered" >            if (match) {</span>
+<span class="cstat-no" title="statement not covered" >                const cols = +match[1] || 1;</span>
+<span class="cstat-no" title="statement not covered" >                const rows = +match[2] || 2;</span>
+<span class="cstat-no" title="statement not covered" >                cmd.createTable(rows, cols, editor, configuration, stringifier);</span>
+            }
+        });
+    }));
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export function deactivate() {</span>
+}
+&nbsp;
+type TableCommandCallback = (editor: vscode.TextEditor, e: vscode.TextEditorEdit, tableLocation: vscode.Range, table: Table) =&gt; void;
+&nbsp;
+function registerTableCommand(command: string, callback: TableCommandCallback, options?: {format: boolean}) {
+    return vscode.commands.registerTextEditorCommand(command, async (editor, e) =&gt; {
+        const tableRange = locator.locate(editor.document, editor.selection.start.line);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isUndefined(tableRange)) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+        const selectedText = editor.document.getText(tableRange);
+        const table = parser.parse(selectedText);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isUndefined(table)) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        table.startLine = tableRange.start.line;
+&nbsp;
+        if (options &amp;&amp; options.format) {
+            cmd.formatUnderCursor(editor, e, tableRange, table, stringifier).then(() =&gt; callback(editor, e, tableRange, table));
+        } else {
+            callback(editor, e, tableRange, table);
+        }
+    });
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu May 03 2018 01:42:11 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

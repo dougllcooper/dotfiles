@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let unstable = import <nixos-unstable> { };
+customNodePackages = pkgs.callPackage ./customNodePackages {  };
 in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -19,6 +20,8 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+
 
   # git setup
   programs.git = {
@@ -82,6 +85,11 @@ in {
     nixpkgs-fmt
     bat
     mlocate
+    tmux
+
+    # custom node packages
+    customNodePackages.import-js
+
 
     # emacs compatibility stuff
     ripgrep
@@ -89,8 +97,8 @@ in {
     nodejs-18_x
     nodePackages.stylelint
     nodePackages.js-beautify
-    nodePackages.prettier
     nodePackages.yarn
+    nodePackages.eslint
     html-tidy
     nixfmt
 
@@ -131,4 +139,11 @@ in {
     unstable.logseq
     unstable.obsidian
   ];
+
+# setup custom node plugins
+#environment.systemPackages = [
+#    customNodePackages.import-js
+#];
+
+
 }

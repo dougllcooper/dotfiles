@@ -114,6 +114,26 @@ This function should only modify configuration layer settings."
 
      html
      javascript
+     ;(javascript :variables
+  	   ;js2-mode-show-strict-warnings nil
+	   ;javascript-import-tool 'import-js
+	   ;javascript-backend 'lsp
+	   ;javascript-fmt-tool 'web-beautify
+	   ;javascript-fmt-on-save t
+	   ;js2-basic-offset 2
+	   ;js-indent-level 2
+	   ;javascript-repl 'nodejs
+	   ;js2-mode-show-strict-warnings nil
+	   ;js2-mode-show-parse-errors nil)
+
+     ;web-beautify
+
+     ;(typescript :variables
+	    ;typescript-fmt-on-save t
+	    ;;;typescript-linter 'tslint
+	    ;typescript-fmt-tool 'typescript-formatter
+	    ;typescript-backend 'lsp)
+
      json
 
      ;; Language server protocol with minimal visual impact
@@ -429,6 +449,7 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
 
    dotspacemacs-themes '(doom-gruvbox-light
+			 doom-gruvbox
                          alect-light
                          doom-solarized-light
                          doom-sourcerer
@@ -752,6 +773,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; simplifying version control of the Spacemacs configuration file
   (setq custom-file (file-truename (concat dotspacemacs-directory "emacs-custom-settings.el")))
   (load custom-file)
+
+;; location of node
+(add-to-list 'exec-path "/home/doug/.nix-profile/bin/node" t)
 
 
   ;; custom theme modification
