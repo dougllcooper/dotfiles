@@ -9,26 +9,56 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled.md",
+            "file": "Test for markdown extended.md",
             "mode": "source",
             "backlinks": false,
             "source": false
           }
         },
+        "group": "06ec9e4e1a31bf88",
         "pane-relief:history-v1": {
           "pos": 0,
           "stack": [
             {
               "leaf": "cc83254e48567c61",
-              "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Untitled.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+              "group": "06ec9e4e1a31bf88",
+              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Test for markdown extended.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
               "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
             },
             {
               "leaf": "cc83254e48567c61",
               "group": null,
-              "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
-              "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.7145847871598046}"
+              "state": "{\"type\":\"empty\",\"state\":{}}",
+              "eState": "{}"
+            }
+          ]
+        }
+      },
+      {
+        "id": "f77beb6d22b0f3ee",
+        "type": "leaf",
+        "state": {
+          "type": "media-view",
+          "state": {
+            "info": {
+              "host": 0,
+              "id": "GQXVWtNkeZw",
+              "iframe": "https://www.youtube.com/embed/GQXVWtNkeZw",
+              "src": "https://www.youtube.com/watch?v=GQXVWtNkeZw",
+              "hash": ""
+            },
+            "currentTime": 47.62253503433227
+          }
+        },
+        "group": "06ec9e4e1a31bf88",
+        "pane-relief:history-v1": {
+          "pos": 0,
+          "stack": [
+            {
+              "leaf": "f77beb6d22b0f3ee",
+              "group": "06ec9e4e1a31bf88",
+              "state": "{\"type\":\"media-view\",\"state\":{\"info\":{\"host\":0,\"id\":\"GQXVWtNkeZw\",\"iframe\":\"https://www.youtube.com/embed/GQXVWtNkeZw\",\"src\":\"https://www.youtube.com/watch?v=GQXVWtNkeZw\",\"hash\":\"\"},\"currentTime\":45.6508350782013}}",
+              "eState": "{}"
             }
           ]
         }
@@ -91,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 268.5082473754883
+    "width": 268.5082473754883,
+    "collapsed": true
   },
   "right": {
     "id": "7a43a6c530e72e44",
@@ -123,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "Test for markdown extended.md"
               }
             },
             "pane-relief:history-v1": {
@@ -156,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Test for markdown extended.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +208,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "Test for markdown extended.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -193,7 +224,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Untitled.md",
+                "file": "Test for markdown extended.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -230,11 +261,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 245.59156799316406
+    "width": 245.59156799316406,
+    "collapsed": true
   },
   "active": "cc83254e48567c61",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Test for markdown extended.md",
     "LYT Kit.md",
     "Tag Taxonomy.md",
     "Home.md",

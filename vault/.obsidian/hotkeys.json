@@ -550,5 +550,24 @@
       ],
       "key": "P"
     }
+  ],
+  "media-extended:take-rec-timestamp": [],
+  "templater-obsidian:jump-to-next-cursor-location": [
+    {
+      "modifiers": [
+        "Meta",
+        "Shift"
+      ],
+      "key": "N"
+    }
+  ],
+  "media-extended:get-timestamp": [
+    {
+      "modifiers": [
+        "Meta",
+        "Shift"
+      ],
+      "key": "M"
+    }
   ]
 }
