@@ -11,7 +11,10 @@ git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://github.com/eendroroy/alacritty-theme ~/software/alacritty-theme
 
 # sbcl source code for sbcl code definitions
-wget -O ~/software/sbcl-2.2.5-source.tar.bz2 http://prdownloads.sourceforge.net/sbcl/sbcl-2.2.5-source.tar.bz2\?download
+wget -O ~/software/sbcl-2.2.4-source.tar.bz2 http://prdownloads.sourceforge.net/sbcl/sbcl-2.2.4-source.tar.bz2\?download
+
+# get syncthing to sync logseq desktop and android
+wget -O ~/syncthing-linux-amd64-v1.20.2.tar.gz https://github.com/syncthing/syncthing/releases/download/v1.20.2/syncthing-linux-amd64-v1.20.2.tar.gz
 
 # clojure source code for clojure deps.edn
 git clone https://github.com/clojure/clojure ~/software/clojure-src
