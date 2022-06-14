@@ -1,5 +1,0 @@
-up:: 
-tags:: 
-dates:: 
-
-# {{title}}
