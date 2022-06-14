@@ -11,7 +11,7 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 # set env variables
-export EDITOR="emacs"
+export EDITOR="nvim"
 export PAGER="bat"
 export XDG_CONFIG_HOME="$HOME/.config"
 #
@@ -53,6 +53,9 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.npm-packages/bin"
 
 # setup for direnv
 # eval "$(direnv hook zsh)"
+
+# manual setup of zsh-completions
+fpath=($HOME/software/zsh-completions/src $fpath)
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -118,10 +121,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Load autosuggestions
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$HOME/software/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Load syntax highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/software/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # source token
 source "$HOME/.config/token"
@@ -168,12 +171,18 @@ alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 
 # nix aliases
-alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
-alias nixReb="sudo nixos-rebuild switch"
-alias nixse="nix-env -qasP --description"
-alias nixUpdateD="sudo nix-channel --update --dry-run; nix-channel --update --dry-run; nix-env -u --always --dry-run"
-alias nixUpdate="sudo nix-channel --update; nix-channel --update; nix-env -u --always; systemctl daemon-reload; systemctl restart nix-daemon"
-alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; sudo nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
+# alias nixConf="sudo -E nvim /etc/nixos/configuration.nix"
+# alias nixReb="sudo nixos-rebuild switch"
+# alias nixse="nix-env -qasP --description"
+# alias nixUpdateD="sudo nix-channel --update --dry-run; nix-channel --update --dry-run; nix-env -u --always --dry-run"
+# alias nixUpdate="sudo nix-channel --update; nix-channel --update; nix-env -u --always; systemctl daemon-reload; systemctl restart nix-daemon"
+# alias nixUpdateClean="sudo nix-channel --update; nix-channel --update; nix-env -u --always; sudo rm /nix/var/nix/gcroots/auto/*; nix-collect-garbage -d; sudo nix-collect-garbage -d; systemctl daemon-reload; systemctl restart nix-daemon"
 
 # mount /dev/sdb2 for data
 alias data="sudo mount /dev/disk/by-id/ata-ST2000LX001-1RG174_ZDZ78AEA-part2 $HOME/data"
+
+# aliases for opensuse
+alias z="sudo zypper"
+alias zin="sudo zypper install"
+alias zse="zypper search"
+alias zdup="sudo zypper dup --allow-vendor-change"
