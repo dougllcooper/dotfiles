@@ -1,0 +1,16 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+alt+o ctrl+alt+o",
+        "command": "ocaml.open-repl"
+    },
+    {
+        "key": "ctrl+alt+o ctrl+alt+c",
+        "command": "workbench.view.extension.ocaml-explorer"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-vscode-neovim.send-cmdline",
+        "when": "neovim.mode == 'cmdline'"
+    }
+]

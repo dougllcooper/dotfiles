@@ -1,0 +1,77 @@
+{
+    "workbench.iconTheme": "gruvbox-material-icon-theme",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80
+    ],
+    "editor.fontLigatures": "'calt' on, 'zero', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14', 'ss15', 'ss16', 'ss20'",
+    "debug.allowBreakpointsEverywhere": true,
+    "workbench.panel.defaultLocation": "bottom",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "gruvboxMaterial.darkPalette": "mix",
+    "gruvboxMaterial.darkContrast": "hard",
+    "explorer.compactFolders": false,
+    "redhat.telemetry.enabled": false,
+    "calva.customREPLCommandSnippets": [],
+    "calva.prettyPrintingOptions": {
+        "printEngine": "pprint",
+        "enabled": false,
+        "width": 120,
+        "maxLength": 50
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        }
+    ],
+    "shellcheck.executablePath": "/usr/bin/shellcheck",
+    "shellcheck.run": "onSave",
+    "julia.executablePath": "/home/doug/.juliaup/bin/julia",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "emmet.includeLanguages": {
+        "html-eex": "html",
+        "phoenix-heex ": "html"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html",
+        "elixir": "html",
+        "phoenix-heex": "html"
+    },
+    "editor.fontFamily": "JuliaMono",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.kubectl-path.linux": "/home/doug/.local/state/vs-kubernetes/tools/kubectl/kubectl",
+        "vscode-kubernetes.helm-path.linux": "/home/doug/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vscode-kubernetes.minikube-path.linux": "/home/doug/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "haskell.ghcupExecutablePath": "/home/doug/.ghcup/bin/ghcup",
+    "haskell.serverExecutablePath": "/home/doug/.ghcup/bin/haskell-language-server-wrapper",
+    "haskell.openSourceInHackage": false,
+    "haskell.plugin.fourmolu.config.external": true,
+    "haskell.formattingProvider": "fourmolu",
+    "elixirLS.languageServerOverridePath": "/home/doug/code/elixir/elixir-ls",
+    "elixir.credo.executePath": "/home/doug/.asdf/shims"
+}

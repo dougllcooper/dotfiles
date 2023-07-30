@@ -1,1 +1,0 @@
-Dendron Snippet Maker is a fork of [Easy Snippet Maker](https://github.com/tariky/easy-snippet-maker), available under the [MIT License](https://github.com/tariky/easy-snippet-maker/blob/master/License).
