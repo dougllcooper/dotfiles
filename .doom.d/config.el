@@ -1,11 +1,15 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(setq evil-snipe-override-evil-repeat-keys nil)
+(setq evil-repeat-find-char-reverse nil)
+(setq doom-localleader-key ",")
+
 (setq user-full-name "Doug Cooper"
       user-mail-address "dougllcooper@gmail.com"
       doom-theme 'doom-solarized-dark)
 
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+;; Start maximised (cross-platf)
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (evil-define-key 'normal ibuffer-mode-map
   (kbd "f c") 'ibuffer-filter-by-content
@@ -70,66 +74,66 @@
                               ("mp4" . "mpv")))
 
 (evil-define-key 'normal peep-dired-mode-map
-  (kbd "j") 'peep-dired-next-file
-  (kbd "k") 'peep-dired-prev-file)
+   (kbd "j") 'peep-dired-next-file
+   (kbd "k") 'peep-dired-prev-file)
 (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
 
-(use-package! elfeed-goodies)
-(elfeed-goodies/setup)
-(setq elfeed-goodies/entry-pane-size 0.5)
-(add-hook 'elfeed-show-mode-hook 'visual-line-mode)
-(evil-define-key 'normal elfeed-show-mode-map
-  (kbd "J") 'elfeed-goodies/split-show-next
-  (kbd "K") 'elfeed-goodies/split-show-prev)
-(evil-define-key 'normal elfeed-search-mode-map
-  (kbd "J") 'elfeed-goodies/split-show-next
-  (kbd "K") 'elfeed-goodies/split-show-prev)
-(setq elfeed-feeds (quote
-                    (("https://www.reddit.com/r/linux.rss" reddit linux)
-                     ("https://www.reddit.com/r/commandline.rss" reddit commandline)
-                     ("https://www.reddit.com/r/distrotube.rss" reddit distrotube)
-                     ("https://www.reddit.com/r/emacs.rss" reddit emacs)
-                     ("https://www.gamingonlinux.com/article_rss.php" gaming linux)
-                     ("https://hackaday.com/blog/feed/" hackaday linux)
-                     ("https://opensource.com/feed" opensource linux)
-                     ("https://linux.softpedia.com/backend.xml" softpedia linux)
-                     ("https://itsfoss.com/feed/" itsfoss linux)
-                     ("https://www.zdnet.com/topic/linux/rss.xml" zdnet linux)
-                     ("https://www.phoronix.com/rss.php" phoronix linux)
-                     ("http://feeds.feedburner.com/d0od" omgubuntu linux)
-                     ("https://www.computerworld.com/index.rss" computerworld linux)
-                     ("https://www.networkworld.com/category/linux/index.rss" networkworld linux)
-                     ("https://www.techrepublic.com/rssfeeds/topic/open-source/" techrepublic linux)
-                     ("https://betanews.com/feed" betanews linux)
-                     ("http://lxer.com/module/newswire/headlines.rss" lxer linux)
-                     ("https://distrowatch.com/news/dwd.xml" distrowatch linux))))
+;; (use-package! elfeed-goodies)
+;; (elfeed-goodies/setup)
+;; (setq elfeed-goodies/entry-pane-size 0.5)
+;; (add-hook 'elfeed-show-mode-hook 'visual-line-mode)
+;; (evil-define-key 'normal elfeed-show-mode-map
+;;   (kbd "J") 'elfeed-goodies/split-show-next
+;;   (kbd "K") 'elfeed-goodies/split-show-prev)
+;; (evil-define-key 'normal elfeed-search-mode-map
+;;   (kbd "J") 'elfeed-goodies/split-show-next
+;;   (kbd "K") 'elfeed-goodies/split-show-prev)
+;; (setq elfeed-feeds (quote
+;;                     (("https://www.reddit.com/r/linux.rss" reddit linux)
+;;                      ("https://www.reddit.com/r/commandline.rss" reddit commandline)
+;;                      ("https://www.reddit.com/r/distrotube.rss" reddit distrotube)
+;;                      ("https://www.reddit.com/r/emacs.rss" reddit emacs)
+;;                      ("https://www.gamingonlinux.com/article_rss.php" gaming linux)
+;;                      ("https://hackaday.com/blog/feed/" hackaday linux)
+;;                      ("https://opensource.com/feed" opensource linux)
+;;                      ("https://linux.softpedia.com/backend.xml" softpedia linux)
+;;                      ("https://itsfoss.com/feed/" itsfoss linux)
+;;                      ("https://www.zdnet.com/topic/linux/rss.xml" zdnet linux)
+;;                      ("https://www.phoronix.com/rss.php" phoronix linux)
+;;                      ("http://feeds.feedburner.com/d0od" omgubuntu linux)
+;;                      ("https://www.computerworld.com/index.rss" computerworld linux)
+;;                      ("https://www.networkworld.com/category/linux/index.rss" networkworld linux)
+;;                      ("https://www.techrepublic.com/rssfeeds/topic/open-source/" techrepublic linux)
+;;                      ("https://betanews.com/feed" betanews linux)
+;;                      ("http://lxer.com/module/newswire/headlines.rss" lxer linux)
+;;                      ("https://distrowatch.com/news/dwd.xml" distrowatch linux))))
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
-(setq ivy-posframe-display-functions-alist
-      '((swiper                     . ivy-posframe-display-at-point)
-        (complete-symbol            . ivy-posframe-display-at-point)
-        (counsel-M-x                . ivy-display-function-fallback)
-        (counsel-esh-history        . ivy-posframe-display-at-window-center)
-        (counsel-describe-function  . ivy-display-function-fallback)
-        (counsel-describe-variable  . ivy-display-function-fallback)
-        (counsel-find-file          . ivy-display-function-fallback)
-        (counsel-recentf            . ivy-display-function-fallback)
-        (counsel-register           . ivy-posframe-display-at-frame-bottom-window-center)
-        (dmenu                      . ivy-posframe-display-at-frame-top-center)
-        (nil                        . ivy-posframe-display))
-      ivy-posframe-height-alist
-      '((swiper . 20)
-        (dmenu . 20)
-        (t . 10)))
-(ivy-posframe-mode 1) ; 1 enables posframe-mode, 0 disables it.
+;; (setq ivy-posframe-display-functions-alist
+;;       '((swiper                     . ivy-posframe-display-at-point)
+;;         (complete-symbol            . ivy-posframe-display-at-point)
+;;         (counsel-M-x                . ivy-display-function-fallback)
+;;         (counsel-esh-history        . ivy-posframe-display-at-window-center)
+;;         (counsel-describe-function  . ivy-display-function-fallback)
+;;         (counsel-describe-variable  . ivy-display-function-fallback)
+;;         (counsel-find-file          . ivy-display-function-fallback)
+;;         (counsel-recentf            . ivy-display-function-fallback)
+;;         (counsel-register           . ivy-posframe-display-at-frame-bottom-window-center)
+;;         (dmenu                      . ivy-posframe-display-at-frame-top-center)
+;;         (nil                        . ivy-posframe-display))
+;;       ivy-posframe-height-alist
+;;       '((swiper . 20)
+;;         (dmenu . 20)
+;;         (t . 10)))
+;; (ivy-posframe-mode 1) ; 1 enables posframe-mode, 0 disables it.
 
-(map! :leader
-      (:prefix ("v" . "Ivy")
-       :desc "Ivy push view" "v p" #'ivy-push-view
-       :desc "Ivy switch view" "v s" #'ivy-switch-view))
-
+;; (map! :leader
+;;       (:prefix ("v" . "Ivy")
+;;        :desc "Ivy push view" "v p" #'ivy-push-view
+;;        :desc "Ivy switch view" "v s" #'ivy-switch-view))
+;;
 (setq display-line-numbers-type t)
 (map! :leader
       :desc "Comment or uncomment lines" "TAB TAB" #'comment-line
@@ -149,7 +153,7 @@
 
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda () (rainbow-mode 1)))
-(global-rainbow-mode 1 )
+  (global-rainbow-mode 1 )
 
 (map! :leader
       (:prefix ("r" . "registers")
@@ -168,7 +172,7 @@
 (defun prefer-horizontal-split ()
   (set-variable 'split-height-threshold nil t)
   (set-variable 'split-width-threshold 40 t)) ; make this as low as needed
-(add-hook 'markdown-mode-hook 'prefer-horizontal-split)
+  (add-hook 'markdown-mode-hook 'prefer-horizontal-split)
 (map! :leader
       :desc "Clone indirect buffer other window" "b c" #'clone-indirect-buffer-other-window)
 
@@ -184,7 +188,25 @@
 (after! projectile
 (setq projectile-project-search-path '("~/quicklisp/local-projects/")))
 
-(use-package! evil-cleverparens
-  :config
-    (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
-    (add-hook 'elisp-mode-hook #'evil-cleverparens-mode))
+; (use-package! evil-cleverparens
+;   :config
+;     (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
+;     (add-hook 'elisp-mode-hook #'evil-cleverparens-mode)
+;     (add-hook 'racket-mode-hook #'evil-cleverparens-mode))
+;;
+;; enable unicode input for Racket buffers
+;; C-\ or running toggle-input-method to toggle on and off
+(add-hook 'racket-mode-hook      #'racket-unicode-input-method-enable)
+(add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
+
+(after! sly
+  (setq! sly-lisp-implementations
+         '((sbcl ("/usr/bin/ros" "-L" "sbcl-bin" "-Q" "run") :coding-system utf-8-unix)
+           (clisp ("/usr/bin/ros" "-L" "clisp" "-Q" "run"))
+           (clozure-cl ("/usr/bin/ros" "-L" "ccl-bin" "-Q" "run"))
+           (cmucl ("/usr/bin/ros" "-L" "cmu-bin" "-Q" "run"))
+           (ecl ("/usr/bin/ros" "-L" "ecl" "-Q" "run") :coding-system utf-8-unix)
+           (abcl ("/usr/bin/ros" "-L" "abcl-bin" "-Q" "run")))))
+
+(after! lsp-haskell
+  (setq lsp-haskell-formatting-provider "fourmolu"))

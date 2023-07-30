@@ -65,7 +65,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 
 # Start Applications
 bindsym $mod+Shift+w exec firefox
-bindsym $mod+Shift+Return exec pcmanfm
+bindsym $mod+Shift+Return exec thunar
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+Shift+c exec code
 # bindsym $mod+Shift+t exec treesheets

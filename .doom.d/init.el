@@ -19,6 +19,13 @@
        ;;japanese
        ;;layout            ; auie,ctsrnm is the superior home row
 
+       :custom
+       ;; (my-racket           ; racket module with customized keybindings
+       ;;     +xp
+       ;;     +lsp)             ; and custom functions from spacemacs
+       ;; (my-ocaml
+       ;;  +lsp +tree-sitter)
+
        :completion
        (company           ; the ultimate code completion backend
           +childframe)
@@ -26,14 +33,15 @@
        ;; +childframe
        ;; +icons
        ;; +fuzzy)
-       ido               ; the other *other* search engine...
-        (ivy               ; a search engine for love and life
-         +fuzzy
-         +prescient
-         +childframe
-         +icons)
-       ;;(vertico           ; the search engine of the future
-       ;;   +icons)
+       ;;ido               ; the other *other* search engine...
+       ;; (ivy               ; a search engine for love and life
+       ;;  +fuzzy
+       ;;  +prescient
+       ;;  +childframe
+       ;;  +icons)
+       (vertico           ; the search engine of the future
+          +icons
+          +childframe)
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -44,7 +52,8 @@
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        indent-guides     ; highlighted indent columns
-       (ligatures +extras)         ; ligatures and symbols to make your code pretty again
+       (ligatures +extras
+          +fira +iosevka +hasklig)         ; ligatures and symbols to make your code pretty again
        ;;minimap           ; show a map of the code on the side
        modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink cursor line after big motions
@@ -56,7 +65,8 @@
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       ;;window-select     ; visually switch windows
+       (window-select     ; visually switch windows
+        +numbers)
        workspaces        ; tab emulation, persistence & separate workspaces
        ;;zen               ; distraction-free coding or writing
 
@@ -117,6 +127,7 @@
        ;;taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
+       ;;tree-sitter
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
@@ -127,7 +138,8 @@
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;(cc +lsp)         ; C > C++ == 1
-       ;;clojure           ; java with a lisp
+       ;;(clojure           ; java with a lisp
+       ;;  +lsp +tree-sitter)
        common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
@@ -147,13 +159,16 @@
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
        ;;(go +lsp)         ; the hipster dialect
-       ;;(haskell +lsp)    ; a language that's lazier than I am
+       ;;(haskell +lsp
+       ;;   +tree-sitter)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        json              ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
-       javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       ;;julia             ; a better, faster MATLAB
+       javascript          ; all(hope(abandon(ye(who(enter(here))))))
+       ;; (julia
+       ;;  +lsp
+       ;;  +tree-sitter)
        ;;kotlin            ; a better, slicker Java(Script)
        (latex             ; writing papers in Emacs has never been so fun
         +latexmk)
@@ -163,7 +178,8 @@
        markdown          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
-       ;;ocaml             ; an objective camel
+       ;; (ocaml             ; an objective camel
+       ;; +lsp +tree-sitter)
        ;;(org +dnd)
        (org               ; organize your plain life in plain text
           +journal
@@ -177,18 +193,22 @@
        ;;purescript        ; javascript, but functional
        ;;python            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
-       ;;(racket            ; a DSL for DSLs
-       ;; +lsp		   ; uses jeapostrophe/racket-langserver
-       ;; +xp)		   ; enable explore mode, which "analyzes expanded code to explain and explore."
+       ;; (racket            ; a DSL for DSLs
+       ;;  +lsp       ; uses jeapostrophe/racket-langserver
+       ;;  +xp)       ; enable explore mode, which "analyzes expanded code to explain and explore."
        ;;raku              ; the artist formerly known as perl6
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
-       ;;scala             ; java, but good
+       ;;(rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;; +lsp
+       ;; +tree-sitter)
+       ;;(scala             ; java, but good
+       ;;  +lsp
+       ;;  +tree-sitter)
        ;;(scheme +chicken)   ; a fully conniving family of lisps
        sh               ; she sells {ba,z,fi}sh shells on the C xor
-       ;;sml
+       ;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
